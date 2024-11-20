@@ -1,0 +1,21 @@
+.productListingContainer {
+  padding: 50px;
+}
+
+.heading {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+
+.loading {
+  text-align: center;
+  font-size: 1.2em;
+  color: #999;
+}
+
+.productListing {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}

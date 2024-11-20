@@ -1,0 +1,56 @@
+/* Container for the page */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+  
+  /* Container for the message */
+  .messageContainer {
+    background-color: rgb(205, 211, 235);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  /* Heading style */
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #3daf47;
+  }
+  .heading_failed{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #a73333;
+  }
+  /* Text style */
+  .text {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #2e2e2e;
+  }
+  
+  /* Button style for action */
+  .button {
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  

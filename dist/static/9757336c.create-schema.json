@@ -1,0 +1,42 @@
+[
+  {
+    "fields": [
+      {
+        "name": "name",
+        "type": "string",
+        "title": "Product Name"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "type": "number"
+      },
+      {
+        "description": "If the product is on sale, set a discounted price",
+        "name": "discountPrice",
+        "type": "number"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "options": {
+          "accept": ".pdf"
+        },
+        "description": "Upload a PDF file that users can download.",
+        "name": "pdfFile",
+        "type": "file",
+        "title": "Product PDF"
+      }
+    ],
+    "name": "product",
+    "type": "document"
+  }
+]

@@ -1,0 +1,106 @@
+/* src/app/about_us/about_us.css */
+
+.about-us-container {
+
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9fbc5;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.about-us-header,
+.mission-section,
+.vision-section,
+.endorsements-section,
+.expertise-section,
+.values-section,
+.contact-section {
+    margin-bottom: 30px;
+}
+
+.about-us-title,
+.section-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #4a90e2;
+    margin-top: 6px;
+    border-radius: 3px;
+}
+
+.section-text,
+.about-us-intro,
+.values-list,
+.contact-email {
+    font-size: 17px;
+    color: #444;
+    margin: 0;
+}
+
+.about-us-intro {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.values-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.value-item {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 16px;
+    color: #555;
+}
+
+.value-item::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #4a90e2;
+    font-size: 20px;
+}
+
+.contact-email {
+    color: #4a90e2;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-email:hover {
+    color: #357abd;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .about-us-container {
+        padding: 20px;
+    }
+    .about-us-title,
+    .section-title {
+        font-size: 24px;
+    }
+    .section-text,
+    .about-us-intro {
+        font-size: 16px;
+    }
+}

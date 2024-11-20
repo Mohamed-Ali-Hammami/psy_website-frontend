@@ -1,0 +1,493 @@
+
+
+.wrapper {
+    position: relative; /* Ensure the wrapper has relative positioning */
+    width: 90%; /* Adjust width to a percentage of the container */
+    border: 1px solid black;
+    max-width: 800px; /* Max width for larger screens */
+    max-height: 90vh; /* Limit the height to 90% of the viewport */
+    overflow-y: auto;
+    margin: 40px auto; /* Center the wrapper */
+    padding: 40px; /* Internal padding */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url('/images/vbv.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire wrapper */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.75); /* Shadow for depth */
+    z-index: 1;
+}
+
+/* Optional: Custom scrollbar styling */
+/* Make scrollbar narrower */
+.wrapper::-webkit-scrollbar {
+    width: 6px; /* Adjust width to make the scrollbar thinner */
+    height: 6px; /* Adjust height for horizontal scrollbar */
+}
+
+/* Styling the track of the scrollbar */
+.wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Styling the thumb (the draggable part) */
+.wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    height: 30px; /* Make the thumb smaller */
+}
+
+/* Thumb hover effect */
+.wrapper::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* Overlay */
+.wrapper::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Behind the wrapper */
+}
+
+/* Hover effect for interactivity */
+.wrapper:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+}
+
+/* Close Button */
+.closeButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.closeButton:hover {
+    color: #4a90e2; /* Change color on hover */
+}
+
+/* Headings */
+.customh1 {
+    background-color: transparent; /* Keep background transparent */
+    border: 2px solid #335880; /* Border around the heading */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Centered text */
+    margin-bottom: 20px; /* Space below */
+    font-size: 2.5rem; /* Increased font size */
+    font-weight: 600; /* Semi-bold font weight */
+    padding: 10px; /* Internal padding */
+    color: #ffffff; /* White text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for depth */
+}
+
+/* Paragraphs */
+.customp {
+    font-size: 1rem; /* Base font size for readability */
+    color: #000000; /* Text color */
+    text-align: center; /* Centered alignment */
+    margin-top: 20px; /* Space above */
+    font-weight: 400; /* Normal weight */
+}
+
+/* Links */
+.customa {
+    color: #007bff; /* Bootstrap primary color */
+    text-decoration: none; /* Remove underline */
+    font-weight: 500; /* Slightly bolder link */
+    transition: color 0.2s ease; /* Smooth color transition */
+}
+
+.customa:hover {
+    color: #0056b3; /* Darker shade on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Checkbox */
+.wthree-text label {
+    font-size: 0.9em; /* Font size for labels */
+    color: #fff; /* Text color */
+    font-weight: 200; /* Light font weight */
+    cursor: pointer; /* Pointer cursor */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items */
+}
+
+
+/* Input Styles */
+.formInput input[type="text"],
+.formInput input[type="email"],
+.formInput input[type="password"],
+.formInput button {
+    width: 100%; /* Full width */
+    background: rgba(255, 255, 255, 0.3); /* Light background */
+    padding: 12px; /* Internal padding */
+    margin: 15px 0; /* Vertical margin */
+    border-radius: 20px; /* Rounded corners */
+    border: 1px solid #424; /* Border color */
+    transition: border-color 0.3s ease; /* Transition for border color */
+    color: white; /* Text color */
+}
+
+/* Focus Styles */
+.formInput input[type="text"]:focus,
+.formInput input[type="email"]:focus,
+.formInput input[type="password"]:focus {
+    border-color: #3498db; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button Styles */
+.formInput button,
+.submitButton {
+    background-color: #525252; /* Default background color */
+    color: #fff; /* Text color */
+    font-weight: bold; /* Bold text */
+    padding: 12px; /* Internal padding */
+    margin: 0px 0; /* Vertical margin */
+    border: none; /* No border */
+    border: 1px solid #000000; /* Border color */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
+    width: 70%; /* Width of the button */
+}
+
+/* Placeholder styling */
+.formInput input[type="text"]::placeholder,
+.formInput input[type="email"]::placeholder,
+.formInput input[type="password"]::placeholder {
+    color: rgba(0, 0, 0, 0.438); /* Lighter placeholder text */
+    font-style: normal; /* Normal style for placeholder */
+    letter-spacing: 1px; /* Letter spacing */
+    font-size: 14px; /* Adjust font size */
+}
+.buttonContainer {
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.submitButton {
+    background-color: #000000; /* Default background color for submit button */
+}
+
+/* Disabled Button Styles */
+.formInput button:disabled,
+.submitButton:disabled {
+    background-color: #ccc; /* Gray background when disabled */
+    cursor: not-allowed; /* Not allowed cursor */
+}
+
+/* Hover and Active States */
+.formInput button:hover:not(:disabled),
+.submitButton:hover:not(:disabled) {
+    background-color: #335880; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.formInput button:active:not(:disabled),
+.submitButton:active:not(:disabled) {
+    transform: translateY(0); /* Reset lift effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow effect on click */
+}
+
+/* Focus Ring for Accessibility */
+.formInput button:focus,
+.submitButton:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Custom focus ring */
+}
+
+/* Loading Spinner */
+.loadingSpinner {
+    border: 4px solid rgba(0, 0, 0, 0.1); /* Light border */
+    width: 36px; /* Width of the spinner */
+    height: 36px; /* Height of the spinner */
+    border-radius: 50%; /* Circular shape */
+    border-left-color: #022457; /* Spinner color */
+    animation: spin 1s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); } /* Full rotation */
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1; /* Above other elements */
+}
+
+/* Modal Content */
+.modalContent {
+    background-color: rgb(153, 153, 153); /* Modal background color */
+    text-align: center; /* Centered text */
+    font-weight: bolder; /* Bold text */
+    position: relative; /* Relative positioning */
+    padding: 20px; /* Internal padding */
+    max-width: 600px; /* Max width */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Modal Header */
+.modalHeader {
+    position: relative; /* Relative positioning */
+    height: 30px; /* Fixed height */
+    margin-bottom: 10px; /* Space below */
+}
+.resetButton {
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    cursor: pointer; /* Pointer cursor */
+    font-size: inherit; /* Inherit font size from parent */
+    color: inherit; /* Inherit text color from parent */
+    text-align: inherit; /* Inherit text alignment */
+    line-height: inherit; /* Inherit line height */
+    display: inline; /* Inline display */
+}
+/* Close Modal Button */
+.closeModalButton {
+    position: absolute; /* Absolute positioning */
+    top: 0;
+    right: 0;
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 24px; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    color: #333; /* Text color */
+    padding: 0; /* No padding */
+    line-height: 1; /* Line height */
+}
+
+.closeModalButton:hover {
+    color: red; /* Change color on hover */
+}
+
+/* Terms Button */
+.termsButton {
+    cursor: pointer; /* Pointer cursor */
+    font-weight: bold; /* Bold text */
+    font-size: small; /* Font size for terms button */
+}
+
+.termsButton:hover {
+    color: darkblue; /* Change color on hover */
+}
+
+/* Forgot Password Form */
+.forgotPasswordForm {
+    text-align: center; /* Centered text */
+}
+
+.forgotPasswordForm h2 {
+    font-size: 24px; /* Increased font size for better readability */
+    color: #ffffff; /* Light text color for contrast on dark background */
+    font-weight: bolder; /* Bold text */
+    margin-top: 20px; /* Space above */
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.5), /* Shadow for depth */
+        -1px -1px 2px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.forgotPasswordForm span {
+    font-size: 16px; /* Font size for span */
+    font-weight: bold; /* Bold text */
+    color: #bb3636; /* Light text color for contrast */
+    background-color: white;
+    padding: 0 10px;
+    text-transform: capitalize;
+    border-radius: 20px;
+    text-shadow: 
+        2px 2px 4px rgba(255, 255, 255, 0.9), /* Shadow for depth */
+        -1px -1px 2px rgba(255, 255, 255, 0.9); /* Shadow for depth */
+}
+
+.error {
+    color: #d9534f; /* Bootstrap danger red */
+    font-size: 0.875rem; /* Slightly smaller than the default text */
+    text-align: left; /* Aligns error messages with the input fields */
+    background-color: rgba(223, 223, 223, 0.9); /* Slightly transparent background for better visibility */
+    padding: 5px; /* Increased padding for better readability */
+    border: 1px solid #d9534f; /* Border matching the text color for emphasis */
+    border-radius: 4px; /* Rounded corners */
+    font-weight: 500; /* Slightly bolder text for better visibility */
+    transition: opacity 0.3s ease; /* Smooth transition for fade effects */
+    margin: 10px 0; /* Vertical margin for spacing */
+    min-height: 20px; /* Reserve space for error messages */
+}
+
+
+/* Animated Error Message (optional, add subtle fade-in effect) */
+.error.fade-in {
+    animation: fadeIn 0.3s ease-in-out; /* Fade-in animation */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start transparent */
+        transform: translateY(-10px); /* Start slightly above */
+    }
+    to {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Reset position */
+    }
+}
+
+
+
+/*-- checkbox --*/
+.wthree-text label {
+    font-size: 0.9em;
+    color: #fff;
+    font-weight: 200;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+input.checkbox {
+    position: relative;
+    background: rgb(151, 57, 57); /* Initial background color */
+    cursor: pointer;
+    width: 1em;
+    height: 1em;
+    margin-right: 8px;
+    transition: background 0.4s ease; /* Smooth transition for background color */
+}
+
+/* Change background color when checkbox is checked */
+input.checkbox:checked {
+    background: rgb(43, 136, 43); /* Change to green when checked */
+}
+
+input.checkbox:before {
+    content: "";
+    position: absolute;
+    width: 1.2em;
+    height: 1.2em;
+    background: inherit;
+    cursor: pointer;
+}
+
+input.checkbox:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.2em;
+    height: 1.2em;
+    border: 1px solid #fff;
+    transition: 0.4s ease-in-out;
+}
+
+input.checkbox:checked:after {
+    position: absolute;
+    transform: rotate(-45deg);
+    height: 0.5rem;
+    border-color: #fff;
+    border-top-color: transparent;
+    border-right-color: transparent;
+}
+
+.anim input.checkbox:checked:after {
+    position: absolute;
+    transform: rotate(-45deg);
+    height: 0.5rem;
+    border-color: transparent;
+    border-right-color: transparent;
+    animation: 0.4s rippling 0.4s ease;
+    animation-fill-mode: forwards;
+}
+
+/*-- keyframes --*/
+@keyframes rippling {
+    50% { border-left-color: #fff; }
+    100% { border-bottom-color: #fff; border-left-color: #fff; }
+}
+
+.colorlibbubblesRegister {
+    position: absolute; /* Changed to absolute */
+    top: 0;
+    left: 0;
+    width: 100%; /* Fill the width of the wrapper */
+    height: 100%; /* Fill the height of the wrapper */
+    z-index: -1; /* Behind the wrapper content */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.colorlibbubblesRegister li {
+    position: relative;
+    list-style: none;
+    display: block;
+    /* Size adjustments */
+    width: 20px;  /* Adjust size as needed */
+    height: 20px;  /* Adjust size as needed */
+    background-color: rgba(255, 255, 255, 0.25);
+    bottom: -40px;
+    animation: bubble 20s infinite linear;
+    border-radius: 50%;
+    transform: translateX(0) scale(1);
+    will-change: transform, opacity;
+    opacity: 0; /* Hidden by default */
+    transform: scale(0.95); /* Slightly smaller */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.colorlibbubblesRegister li:nth-child(1) { left: 5%; animation-duration: 25s; }
+.colorlibbubblesRegister li:nth-child(2) { left: 15%; width: 35px; height: 35px; animation-delay: 3s; animation-duration: 18s; }
+.colorlibbubblesRegister li:nth-child(3) { left: 25%; width: 55px; height: 55px; animation-delay: 5s; animation-duration: 22s; }
+.colorlibbubblesRegister li:nth-child(4) { left: 35%; width: 20px; height: 20px; animation-delay: 7s; animation-duration: 20s; }
+.colorlibbubblesRegister li:nth-child(5) { left: 45%; width: 60px; height: 60px; background-color: rgba(255, 255, 255, 0.2); animation-delay: 10s; animation-duration: 24s; }
+.colorlibbubblesRegister li:nth-child(6) { left: 55%; width: 30px; height: 30px; animation-delay: 4s; animation-duration: 26s; }
+.colorlibbubblesRegister li:nth-child(7) { left: 65%; width: 80px; height: 80px; background-color: rgba(255, 255, 255, 0.15); animation-delay: 8s; }
+.colorlibbubblesRegister li:nth-child(8) { left: 75%; width: 40px; height: 40px; animation-delay: 6s; animation-duration: 19s; }
+.colorlibbubblesRegister li:nth-child(9) { left: 85%; width: 30px; height: 30px; background-color: rgba(255, 255, 255, 0.3); animation-delay: 2s; animation-duration: 30s; }
+.colorlibbubblesRegister li:nth-child(10) { left: 95%; width: 50px; height: 50px; animation-delay: 12s; animation-duration: 21s; }
+.colorlibbubblesRegister li:nth-child(11) { left: 10%; width: 20px; height: 20px; animation-delay: 8s; animation-duration: 20s; }
+.colorlibbubblesRegister li:nth-child(12) { left: 20%; width: 80px; height: 80px; animation-delay: 11s; animation-duration: 28s; }
+.colorlibbubblesRegister li:nth-child(13) { left: 30%; width: 15px; height: 15px; background-color: rgba(255, 255, 255, 0.25); animation-delay: 4s; animation-duration: 27s; }
+.colorlibbubblesRegister li:nth-child(14) { left: 40%; width: 35px; height: 35px; animation-delay: 6s; animation-duration: 23s; }
+.colorlibbubblesRegister li:nth-child(15) { left: 50%; width: 85px; height: 85px; animation-delay: 9s; animation-duration: 25s; }
+.colorlibbubblesRegister li:nth-child(16) { left: 60%; width: 20px; height: 20px; animation-delay: 13s; animation-duration: 26s; }
+.colorlibbubblesRegister li:nth-child(17) { left: 70%; width: 25px; height: 25px; animation-delay: 3s; animation-duration: 22s; }
+.colorlibbubblesRegister li:nth-child(18) { left: 80%; width: 40px; height: 40px; animation-delay: 10s; animation-duration: 29s; }
+.colorlibbubblesRegister li:nth-child(19) { left: 90%; width: 50px; height: 50px; animation-delay: 1s; animation-duration: 18s; }
+.colorlibbubblesRegister li:nth-child(20) { left: 95%; width: 35px; height: 35px; animation-delay: 7s; animation-duration: 31s; }
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-50vh) scale(1.2);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 0;
+    }
+}

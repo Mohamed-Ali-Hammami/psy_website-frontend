@@ -1,0 +1,38 @@
+.successWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+}
+
+.successTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2a9d8f;
+    margin-bottom: 1rem;
+}
+
+.successMessage {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.GotoDashboard {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #2a9d8f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.GotoDashboard:hover {
+    background-color: #21867a;
+}

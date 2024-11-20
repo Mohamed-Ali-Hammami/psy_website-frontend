@@ -1,0 +1,330 @@
+/* Dashboard Container */
+.dashboard-container {
+  max-width: 1200px; /* Limit the width for better readability */
+  margin: 0 auto; /* Center the dashboard */
+  padding: 20px; /* Add padding around the dashboard */
+}
+
+/* Main Dashboard Layout */
+.dashboard-main {
+  background:  linear-gradient(rgba(180, 181, 194, 0.904),rgba(255, 255, 255, 0.9)); /* Slightly more opaque white background */
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow for more depth */
+  padding: 30px; /* Increased inner padding */
+}
+
+/* Header Styles */
+.dashboard-header {
+  margin-bottom: 30px; /* Increased space below the header */
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  margin: 0; 
+  margin-top: 20px; 
+  color: #ffffff; 
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack title and underline vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
+}
+
+.dashboard-title::after {
+  content: '';
+  display: block;
+  width: 600px; /* Width of the underline */
+  height: 4px; /* Height of the underline */
+  background-color: #4a90e2; /* Color of the underline */
+  margin-top: 8px; /* Space between title and underline */
+  border-radius: 3px; /* Rounded corners for the underline */
+}
+
+.welcome-subtitle {
+  margin-top: 5%;
+  margin-bottom: 5%; /* Reduced space above welcome message */
+  font-size: 1.5rem; /* Subtitle font size */
+  color: #666; /* Lighter color for subtitle */
+}
+
+/* Profile Section */
+.profile-section {
+  margin-top: 40px; /* Increased space above profile section */
+}
+
+.profile-header {
+  margin-bottom: 20px; /* Increased space below profile header */
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 15px;
+  text-align: left;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #4a90e2;
+  margin-top: 6px;
+  border-radius: 3px;
+}
+
+.section-description {
+  font-size: 1rem; /* Smaller description font */
+  color: #666; /* Lighter color for description */
+}
+
+/* Form Container Styles */
+.form-container {
+  overflow: hidden;
+  position: fixed; /* Use fixed positioning to make it appear over the page */
+  top: 50%; /* Position the top at the center of the screen */
+  left: 50%; /* Position the left at the center of the screen */
+  transform: translate(-50%, -50%); /* Offset the element by 50% of its own height and width to center it */
+  z-index: 9999; /* Ensure it appears above other content */
+  padding: 20px; /* Increased padding */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+/* Profile Buttons */
+.profile-buttons {
+  display: flex; /* Flexbox for button layout */
+  gap: 15px; /* Increased space between buttons */
+  margin-bottom: 30px; /* Increased space below buttons */
+  justify-content: center;
+}
+
+/* Action Button */
+.action-button {
+  color: #fff;
+  font-weight: 500;
+  background-color: #333;
+  border: none;
+  padding: 10px 15px; /* Increased padding */
+  text-align: center;
+  border-radius: 6px; /* More rounded corners */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: #0056b3; /* Darker blue for hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Profile Content */
+.profile-content {
+  display: flex; /* Flexbox for layout */
+  align-items: center; /* Center items vertically */
+  gap: 20px; /* Space between profile image and name */
+}
+
+.profile-image-container {
+  position: relative; 
+  margin-left: 10%; 
+}
+
+.profile-picture-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-picture {
+  cursor: pointer;
+  border-radius: 50%; /* Circular profile picture */
+  object-fit: cover; /* Cover the image */
+  width: 175px; /* Fixed width for consistency */
+  height: 175px; /* Fixed height for consistency */
+}
+
+.profile-picture-tooltip {
+  position: absolute;
+  bottom: 10px; /* Position the tooltip at the bottom of the profile picture */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+  white-space: nowrap; /* Ensure the text stays in one line */
+  overflow: hidden; /* Hide anything that overflows the tooltip */
+  text-overflow: ellipsis; /* Optional: Add ellipsis (...) for long text */
+  max-width: 200px; /* Optional: Set a maximum width for the tooltip */
+}
+
+
+.profile-picture-wrapper:hover .profile-picture-tooltip {
+  opacity: 1; /* Show the tooltip on hover */
+}
+
+
+.profile-name-container {
+  flex-grow: 1; /* Allow name container to grow */
+}
+
+.profile-name {
+  font-size: 1.5rem; /* Increased name font size */
+  font-weight: bold; /* Bold name */
+}
+
+/* Purchases Section */
+.purchases-section {
+  margin-top: 40px; /* Increased space above purchases section */
+}
+
+.purchases-header {
+  margin-bottom: 20px; /* Increased space below purchases header */
+}
+
+.empty-purchases {
+  text-align: center; /* Center text for empty state */
+  margin-top: 30px; /* Increased space above empty state */
+}
+
+.empty-title {
+  font-size: 1.8rem; /* Increased title size for empty state */
+  color: #dc3545; /* Red color for emphasis */
+}
+
+.empty-description {
+  font-size: 1.1rem; /* Increased description font size */
+  color: #666; /* Lighter color for description */
+}
+
+.action-suggestions {
+  margin-top: 15px; /* Increased space above suggestions */
+}
+
+.suggestion-title {
+  font-weight: bold; /* Bold title for suggestions */
+}
+
+.suggestion-list {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+}
+
+.browse-products-btn {
+  display: inline-block; /* Make it behave like a button */
+  background-color: #28a745; /* Green background */
+  color: #fff; /* White text */
+  padding: 12px 18px; /* Increased padding for button */
+  border-radius: 6px; /* More rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.browse-products-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Loading and Error States */
+.loading-container, .error-container, .no-data-container {
+  text-align: center; /* Center text */
+  margin-top: 30px; /* Increased space above */
+}
+
+.error-heading, .no-data-heading {
+  font-size: 1.8rem; /* Increased heading size */
+  color: #dc3545; /* Red color for errors */
+}
+
+.error-message, .no-data-message {
+  font-size: 1.1rem; /* Increased message font size */
+  color: #666; /* Lighter color for messages */
+}
+
+.error-suggestion, .no-data-suggestion {
+  font-size: 0.9rem; /* Suggestion font size */
+  color: #666; /* Lighter color for suggestions */
+}
+
+.user-details-table {
+  margin-left: 5%;
+  max-width: 600px; /* Limit the table width for better layout */
+  background-color: #222222b6;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.315); /* Add a subtle shadow */
+}
+
+.user-details-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-details-table tr {
+  background-color: #222222b6; /* White background for each row */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.user-details-table tr:hover {
+  background-color: #0056b3; /* Light blue hover effect */
+}
+
+.user-details-table td {
+  padding: 15px 20px; /* Increased padding for better spacing */
+  font-size: 16px;
+  text-align: left;
+}
+
+.user-details-table tr td:first-child {
+  font-weight: 600;
+  color: #ffffff;
+  width: 150px;
+}
+
+.user-details-table tr td:last-child {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.user-details-table tr td:first-child:hover {
+  color: #000000;
+}
+
+.user-details-table tr td:last-child:hover {
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .user-details-table {
+      margin-left: 5%;
+      width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .user-details-table td {
+      padding: 10 px; /* Slightly smaller padding for mobile */
+  }
+
+  .user-details-table tr td:first-child {
+      width: auto; /* Allow label width to adjust on smaller screens */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-content {
+      flex-direction: column; /* Stack items on smaller screens */
+      align-items: flex-start; /* Align items to the start */
+  }
+
+  .profile-image-container {
+      margin-bottom: 15px; /* Space below image on small screens */
+  }
+
+  .profile-buttons {
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 10px; /* Space between buttons */
+  }
+}

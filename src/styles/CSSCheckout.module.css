@@ -1,0 +1,235 @@
+.container {
+  position: relative; /* Ensure the wrapper has relative positioning */
+  width: 80%;  /* Adjust width to a percentage of the container */
+  max-width: 800px;  /* You can still set a max-width for the maximum allowed width */
+  margin: 40px auto;
+  text-align: center;
+  padding: 40px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.767), rgba(0, 0, 0, 0.1)),url('/images/vbv.jpg'); /* Set your background image here */
+  background-size: cover; /* Ensure the image covers the entire wrapper */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  border-radius: 5px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  
+}
+.container h1 {
+  background-color: transparent; /* Keep background transparent */
+  border: 2px solid #335880; /* White border around the background */
+  border-radius: 5px;  /* Rounded corners for the border */
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem; /* Increased font size for a bolder header */
+  font-weight: 600; /* Semi-bold font weight */
+  padding: 10px; /* Add padding inside the border to space the text from the border */
+      font-size: 2.8rem; /* Increased font size */
+      color: #ffffff; /* White text color */
+      text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.5), /* First shadow: offset (2px right, 2px down), blur radius 4px, semi-transparent black */
+        -1px -1px 2px rgba(0, 0, 0, 0.5); /* Second shadow: offset (-1px left, -1px up), blur radius 2px, semi-transparent black */
+    } 
+.cartSummary {
+  margin-bottom: 30px; /* Increased margin for separation from other content */
+  padding: 15px; /* Added padding inside the summary for better readability */
+  background-color: #ffffffd8; /* Made background fully opaque for clarity */
+  border-radius: 8px; /* Slightly larger radius for a modern look */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Improved shadow for a more polished appearance */
+  transition: box-shadow 0.3s ease; /* Added transition for smoother hover effect */
+}
+
+.cartSummary:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle hover effect */
+}
+
+.cartSummary h2 {
+  color: #333333; /* Slightly darker text for better contrast */
+  border-bottom: 2px solid #0d0e5f; /* Increased border thickness for emphasis */
+  padding-bottom: 10px; /* Added padding for better spacing below the header */
+  font-size: 24px; /* Increased font size for a more prominent heading */
+  margin-bottom: 10px;
+}
+
+.ItemName {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0; /* Ensure no extra margin around the text */
+  align-self: flex-start; /* Aligns the text higher relative to the image */
+}
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #0d0e5fc5;
+}
+.cartItemDetails{
+  display: flex;
+  align-items: center; /* Vertically aligns the text and image */
+  gap: 20px; /* Space between the text and image */
+}
+.totalPrice {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+.checkoutButton { 
+  background-color: #313131; /* Default background color */
+  color: #fff; /* Text color */
+  font-weight: bold; /* Bold text */
+  padding: 12px; /* Padding inside the button */
+  margin: 10px 0; /* Margin for spacing */
+  border: none; /* No border */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for background color and scaling */
+  width: 70%; /* Full width */
+}
+
+/* Hover effect for the button */
+.checkoutButton:hover {
+  background-color: #335880; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+.checkoutButton:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  color: red;
+  background-color: #aaa;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/*-- checkbox --*/
+.wthree-text label {
+  font-size: 0.9em;
+  color: #fff;
+  font-weight: 200;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+input.checkbox {
+  position: relative;
+  background: rgb(114, 15, 15); /* Initial background color */
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  margin-right: 8px;
+  transition: background 0.4s ease; /* Smooth transition for background color */
+
+}
+
+/* Change background color when checkbox is checked */
+input.checkbox:checked {
+  background: rgb(18, 145, 18); /* Change to green when checked */
+}
+
+input.checkbox:before {
+  content: "";
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  background: inherit;
+  cursor: pointer;
+}
+
+input.checkbox:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.2em;
+  height: 1.2em;
+  border: 1px solid #fff;
+  transition: 0.4s ease-in-out;
+}
+
+input.checkbox:checked:after {
+  position: absolute;
+  transform: rotate(-45deg);
+  height: 0.5rem;
+  border-color: #fff;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+.anim input.checkbox:checked:after {
+  position: absolute;
+  transform: rotate(-45deg);
+  height: 0.5rem;
+  border-color: transparent;
+  border-right-color: transparent;
+  animation: 0.4s rippling 0.4s ease;
+  animation-fill-mode: forwards;
+}
+
+/*-- keyframes --*/
+@keyframes rippling {
+  50% { border-left-color: #fff; }
+  100% { border-bottom-color: #fff; border-left-color: #fff; }
+}
+
+
+/* Updated Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: rgb(153, 153, 153);
+  text-align: center;
+  font-weight: bolder;
+  position: relative;
+  padding: 20px;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modalHeader {
+  position: relative;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.closeModalButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  padding: 0;
+  line-height: 1;
+}
+
+.closeModalButton:hover {
+  color: red;
+}
+
+.termsButton {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: small;
+}
+
+.termsButton:hover {
+  color: darkblue;
+}

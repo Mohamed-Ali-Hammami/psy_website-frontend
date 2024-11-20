@@ -1,0 +1,867 @@
+.glide__track {
+    overflow: hidden;
+    width: 100%
+			
+}
+.glide__slides {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    backface-visibility: visible;
+    transform-style: preserve-3d;
+    touch-action: pan-Y;
+    overflow: visible;
+    padding: 0;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: wrap;
+    will-change: transform
+}
+.glide__slides--dragging {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none
+}
+@media print,screen and (min-width: 48em) {
+    .glide__slides {
+        flex-wrap:nowrap
+    }}
+.glide__slide {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    white-space: normal;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent
+}
+.glide__slide a {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none
+}
+.glide.is-disabled .glide__slide--clone {
+    visibility: hidden;
+    opacity: 0
+}
+.ie-9 .glide__slide {
+    display: none
+}
+.ie-9 .glide__slide--active {
+    display: block
+}
+.numInputWrapper span:hover {
+    background: rgba(0,0,0,.1)
+}
+.overview__text>ul,.article__detail__text>ul,.article__detail__intro>ul,.journals-content__author>ul,.tt-address__content .description>ul,.content>ul,.content__half>ul,.content__inner>ul,:where(.rte) ul {
+    margin: 0 0 1.5rem;
+    overflow: hidden
+}
+.overview__text>ul li,.article__detail__text>ul li,.article__detail__intro>ul li,.journals-content__author>ul li,.tt-address__content .description>ul li,.content>ul li,.content__half>ul li,.content__inner>ul li,:where(.rte) ul li {
+    margin-left: 18px;
+    list-style: disc outside
+}
+.overview__text>ol,.article__detail__text>ol,.article__detail__intro>ol,.journals-content__author>ol,.tt-address__content .description>ol,.content>ol,.content__half>ol,.content__inner>ol,:where(.rte) ol {
+    margin: 0 0 1.5rem;
+    overflow: hidden
+}
+.overview__text>ol li,.article__detail__text>ol li,.article__detail__intro>ol li,.journals-content__author>ol li,.tt-address__content .description>ol li,.content>ol li,.content__half>ol li,.content__inner>ol li,:where(.rte) ol li {
+    margin-left: 26px;
+    list-style: decimal outside
+}
+.content__inner:after,.content:after {
+    clear: both;
+    overflow: hidden;
+    content: ""
+}
+.relative {
+    position: relative
+}
+.glide__slide {
+    margin-top: 0
+}
+.headline {
+    hyphenate-limit-chars: 6 4 2;
+    display: block;
+    margin: 0 0 1rem;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    word-break: break-word
+}
+@media print,screen and (min-width: 48em) {
+    .headline {
+        margin:0 0 1.5rem
+    }}
+.headline--xs {
+    font: 600 14px/24px "IBM Plex Serif",serif
+}
+@media print,screen and (min-width: 48em) {
+    .headline--xs {
+        font:600 16px/24px "IBM Plex Serif",serif
+    }}
+.headline--s {
+    font: 600 16px/24px "IBM Plex Serif",serif
+}
+@media print,screen and (min-width: 48em) {
+    .headline--s {
+        margin:0 0 1rem;
+        font: 600 20px/32px "IBM Plex Serif",serif
+    }}
+.headline--s.revert {
+        margin: 0 0 1.5rem
+    }
+.headline--m {
+    font: 600 20px/32px "IBM Plex Serif",serif
+}
+@media print,screen and (min-width: 48em) {
+    .headline--m {
+        font:600 26px/40px "IBM Plex Serif",serif
+    }}
+.headline--l {
+    font: 600 26px/40px "IBM Plex Serif",serif
+}
+@media print,screen and (min-width: 48em) {
+    .headline--l {
+        font:600 36px/48px "IBM Plex Serif",serif
+    }}
+.headline--nospace {
+    margin: 0
+}
+@media print,screen and (min-width: 48em) {
+    .headline--nospace {
+        margin:0
+    }}
+.headline--body-ff {
+    font-family: IBM Plex Sans,sans-serif
+}
+.headline a,.headline a:hover {
+    color: #000
+}
+.button,.frame-type-bdshop_product .format-tab,.btn {
+    display: inline-block;
+    padding: .5rem 1.5rem;
+    border-radius: .25rem;
+    color: #fff;
+    font: 600 14px/24px IBM Plex Sans,sans-serif;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out,color .2s ease-in-out
+}
+.button svg,.frame-type-bdshop_product .format-tab svg,.btn svg {
+    display: inline-block;
+    margin: 0 0 0 .5rem;
+    vertical-align: top
+}
+.button svg path,.frame-type-bdshop_product .format-tab svg path,.btn svg path {
+    transition: fill .2s ease-in-out
+}
+.button svg:first-child,.frame-type-bdshop_product .format-tab svg:first-child,.btn svg:first-child {
+    margin: 0 .5rem 0 0
+}
+.button:hover,.frame-type-bdshop_product .format-tab:hover,.button:focus,.frame-type-bdshop_product .format-tab:focus,.btn:hover,.btn:focus {
+    color: #fff
+}
+@media print,screen and (min-width: 48em) {
+    .button,.frame-type-bdshop_product .format-tab,.btn {
+        padding:.75rem 1.5rem;
+        font: 600 16px/24px IBM Plex Sans,sans-serif
+    }}
+.button--icon,.btn--icon {
+    padding: .5rem
+}
+.button--icon svg,.btn--icon svg {
+    margin: 0
+}
+.button--icon svg:first-child,.btn--icon svg:first-child {
+    margin: 0
+}
+@media print,screen and (min-width: 48em) {
+    .button--icon,.btn--icon {
+        padding:.75rem
+    }}
+.button--red,.button-primary,.btn--red,.btn-primary {
+    background-color: #db0723
+}
+.button--red:hover,.button--red:focus,.button-primary:hover,.button-primary:focus,.btn--red:hover,.btn--red:focus,.btn-primary:hover,.btn-primary:focus {
+    background-color: #b40720
+}
+.button--green,.btn--green {
+    background-color: #b0b612
+}
+.button--green:hover,.button--green:focus,.btn--green:hover,.btn--green:focus {
+    background-color: #84880e
+}
+.button--azur-dark-2,.frame-type-bdshop_product .format-tab.active,.btn--azur-dark-2 {
+    background-color: #67bfb8
+}
+.button--azur-dark-2:hover,.frame-type-bdshop_product .format-tab.active:hover,.button--azur-dark-2:focus,.frame-type-bdshop_product .format-tab.active:focus,.btn--azur-dark-2:hover,.btn--azur-dark-2:focus {
+    background-color: #398680
+}
+.button--azur-dark-3,.btn--azur-dark-3 {
+    background-color: #398680
+}
+.button--azur-dark-3:hover,.button--azur-dark-3:focus,.btn--azur-dark-3:hover,.btn--azur-dark-3:focus {
+    background-color: #495c5b
+}
+.button--gray,.btn--gray {
+    background-color: #999
+}
+.button--gray:hover,.button--gray:focus,.btn--gray:hover,.btn--gray:focus {
+    background-color: #4d4d4d
+}
+.button--disabled,.button[disabled],.frame-type-bdshop_product [disabled].format-tab,.btn--disabled,.btn[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed
+}
+.button--disabled:hover,.button--disabled:focus,.button[disabled]:hover,.frame-type-bdshop_product [disabled].format-tab:hover,.button[disabled]:focus,.frame-type-bdshop_product [disabled].format-tab:focus,.btn--disabled:hover,.btn--disabled:focus,.btn[disabled]:hover,.btn[disabled]:focus {
+    background-color: #ccc
+}
+.button--ghost-red,.button--ghost-gray,.btn--ghost-red,.btn--ghost-gray {
+    padding: 0
+}
+.button--ghost-red:hover span,.button--ghost-red:focus span,.button--ghost-gray:hover span,.button--ghost-gray:focus span,.btn--ghost-red:hover span,.btn--ghost-red:focus span,.btn--ghost-gray:hover span,.btn--ghost-gray:focus span {
+    text-decoration: underline
+}
+@media (hover: none) {
+    .button--ghost-red:hover span,.button--ghost-red:focus span,.button--ghost-gray:hover span,.button--ghost-gray:focus span,.btn--ghost-red:hover span,.btn--ghost-red:focus span,.btn--ghost-gray:hover span,.btn--ghost-gray:focus span {
+        text-decoration:none
+    }}
+.button--ghost-red,.btn--ghost-red {
+    color: #db0723
+}
+.button--ghost-red svg path,.btn--ghost-red svg path {
+    fill: #db0723
+}
+.button--ghost-red:hover,.button--ghost-red:focus,.btn--ghost-red:hover,.btn--ghost-red:focus {
+    color: #b40720
+}
+.button--ghost-red:hover svg path,.button--ghost-red:focus svg path,.btn--ghost-red:hover svg path,.btn--ghost-red:focus svg path {
+    fill: #b40720
+}
+@media (hover: none) {
+    .button--ghost-red:hover,.button--ghost-red:focus,.btn--ghost-red:hover,.btn--ghost-red:focus {
+        color:#db0723
+    }
+}
+.button--ghost-red:hover svg path,.button--ghost-red:focus svg path,.btn--ghost-red:hover svg path,.btn--ghost-red:focus svg path {
+        fill: #db0723
+    }
+.button--ghost-azur-dark-2,.frame-type-bdshop_product .format-tab.inactive,.btn--ghost-azur-dark-2 {
+    color: #67bfb8
+}
+.button--ghost-azur-dark-2 svg path,.frame-type-bdshop_product .format-tab.inactive svg path,.btn--ghost-azur-dark-2 svg path {
+    fill: #67bfb8
+}
+.button--ghost-azur-dark-2:hover,.frame-type-bdshop_product .format-tab.inactive:hover,.button--ghost-azur-dark-2:focus,.frame-type-bdshop_product .format-tab.inactive:focus,.btn--ghost-azur-dark-2:hover,.btn--ghost-azur-dark-2:focus {
+    color: #398680
+}
+.button--ghost-azur-dark-2:hover svg path,.frame-type-bdshop_product .format-tab.inactive:hover svg path,.button--ghost-azur-dark-2:focus svg path,.frame-type-bdshop_product .format-tab.inactive:focus svg path,.btn--ghost-azur-dark-2:hover svg path,.btn--ghost-azur-dark-2:focus svg path {
+    fill: #398680
+}
+@media (hover: none) {
+    .button--ghost-azur-dark-2:hover,.frame-type-bdshop_product .format-tab.inactive:hover,.button--ghost-azur-dark-2:focus,.frame-type-bdshop_product .format-tab.inactive:focus,.btn--ghost-azur-dark-2:hover,.btn--ghost-azur-dark-2:focus {
+        color:#67bfb8
+    }}
+.button--ghost-azur-dark-2:hover svg path,.frame-type-bdshop_product .format-tab.inactive:hover svg path,.button--ghost-azur-dark-2:focus svg path,.frame-type-bdshop_product .format-tab.inactive:focus svg path,.btn--ghost-azur-dark-2:hover svg path,.btn--ghost-azur-dark-2:focus svg path {
+        fill: #67bfb8
+    }
+.button--ghost-azur-dark-3,.btn--ghost-azur-dark-3 {
+    color: #398680
+}
+.button--ghost-azur-dark-3 svg path,.btn--ghost-azur-dark-3 svg path {
+    fill: #398680
+}
+.button--ghost-azur-dark-3:hover,.button--ghost-azur-dark-3:focus,.btn--ghost-azur-dark-3:hover,.btn--ghost-azur-dark-3:focus {
+    color: #495c5b
+}
+.button--ghost-azur-dark-3:hover svg path,.button--ghost-azur-dark-3:focus svg path,.btn--ghost-azur-dark-3:hover svg path,.btn--ghost-azur-dark-3:focus svg path {
+    fill: #495c5b
+}
+@media (hover: none) {
+    .button--ghost-azur-dark-3:hover,.button--ghost-azur-dark-3:focus,.btn--ghost-azur-dark-3:hover,.btn--ghost-azur-dark-3:focus {
+        color:#398680
+    }
+}
+.button--ghost-azur-dark-3:hover svg path,.button--ghost-azur-dark-3:focus svg path,.btn--ghost-azur-dark-3:hover svg path,.btn--ghost-azur-dark-3:focus svg path {
+        fill: #398680
+    }
+.button--ghost-gray,.btn--ghost-gray {
+    color: #999
+}
+.button--ghost-gray svg path,.btn--ghost-gray svg path {
+    fill: #999
+}
+.button--ghost-gray:hover,.button--ghost-gray:focus,.btn--ghost-gray:hover,.btn--ghost-gray:focus {
+    color: #4d4d4d
+}
+.button--ghost-gray:hover svg path,.button--ghost-gray:focus svg path,.btn--ghost-gray:hover svg path,.btn--ghost-gray:focus svg path {
+    fill: #4d4d4d
+}
+@media (hover: none) {
+    .button--ghost-gray:hover,.button--ghost-gray:focus,.btn--ghost-gray:hover,.btn--ghost-gray:focus {
+        color:#999
+    }}
+.button--ghost-gray:hover svg path,.button--ghost-gray:focus svg path,.btn--ghost-gray:hover svg path,.btn--ghost-gray:focus svg path {
+        fill: #999
+    }
+.button--bordered,.frame-type-bdshop_product .format-tab.inactive,.btn--bordered {
+    box-shadow: inset 0 0 0 .125rem currentColor
+}
+.button__list,.btn__list {
+    width: 100%;
+    margin: -.5rem -.5rem 2.5rem
+}
+@media print,screen and (min-width: 30em) {
+    .button__list,.btn__list {
+        margin:-.5rem -.5rem 3.5rem
+    }
+}
+@media print,screen and (min-width: 64em) {
+    .button__list,.btn__list {
+        margin:-.5rem -.5rem 4.5rem
+    }
+}
+.button__list--space-between,.btn__list--space-between {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between
+}
+.button__list--no-space,.btn__list--no-space {
+    margin: 0 -.5rem
+}
+@media print,screen and (min-width: 30em) {
+    .button__list--no-space,.btn__list--no-space {
+        margin:0 -.5rem
+    }
+}
+@media print,screen and (min-width: 64em) {
+    .button__list--no-space,.btn__list--no-space {
+        margin:0 -.5rem
+    }
+}
+.button__list .button,.button__list .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .button__list .format-tab,.button__list .btn,.btn__list .button,.btn__list .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .btn__list .format-tab,.btn__list .btn {
+    margin: .5rem
+}
+.button--space-left,.btn--space-left {
+    margin: 0 0 0 1rem
+}
+.button--space-top,.btn--space-top {
+    margin: 1rem 0 0
+}
+.button-group,.btn-group {
+    text-align: right
+}
+.content--lime,.content--azure {
+    padding: 1rem
+}
+.content {
+    margin: 0 0 3rem
+}
+.content.largeimage {
+    overflow: hidden
+}
+@media print,screen and (min-width: 30em) {
+    .content {
+        margin:0 0 4rem
+    }
+}
+@media print,screen and (min-width: 64em) {
+    .content {
+        margin:0 0 5rem
+    }}
+.content.last {
+    margin-bottom: 0
+}
+.content--smallspace {
+    margin-bottom: 1.5rem
+}
+.content--smallspace.last {
+    margin-bottom: 0
+}
+.content--sidebar {
+    margin: 0 0 1rem
+}
+
+@media print,screen and (min-width: 30em) {
+    .content--sidebar {
+        margin:0 0 1.5rem
+    }
+.content--azure {
+    background-color: #e5f9f7
+}
+.content--lime {
+    background-color: #f8f9d1
+}
+.content--smallpadding {
+    padding: .5rem
+}
+.slider--pdp .content__image__inner--small {
+    padding: 0
+}
+}
+@media print,screen and (min-width: 48em) {
+    .slider--pdp .content__image__inner--small {
+        padding:0
+    }}
+.site-content--narrow .content--full-width {
+    position: relative;
+    left: 50%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100vw;
+    max-width: 82rem;
+    transform: translate(-50%)
+}
+.site-content--narrow .content--full-width>.row {
+    margin: 0
+}
+.content--full-width-background {
+    position: relative;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    overflow: visible
+}
+@media print,screen and (min-width: 30em) {
+    .content--full-width-background {
+        padding:2.5rem 0
+    }}
+.content--full-width-background:after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 0;
+    width: 100vw;
+    height: 100%;
+    display: block;
+    transform: translate(-50%);
+    background: inherit;
+    content: ""
+}
+.content--12-highlight {
+    position: relative;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    overflow: visible
+}
+.content--12-highlight .headline {
+    text-align: center
+}
+@media print,screen and (min-width: 30em) {
+    .content--12-highlight {
+        padding:2.5rem 0
+    }}
+.content--12-highlight:after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 0;
+    width: 100vw;
+    height: 100%;
+    display: block;
+    transform: translate(-50%);
+    background: #e5f9f7;
+    content: ""
+}
+.site-content--sidebar .content--12-highlight .headline {
+    text-align: left
+}
+@media print,screen and (min-width: 30em) {
+    .site-content--sidebar .content--12-highlight {
+        padding:0
+    }}
+.site-content--sidebar .content--12-highlight:after {
+        display: none
+    }
+.page-footer__top .columns:last-child .headline {
+        display: none
+    }
+.header-dropdown .button,.header-dropdown .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .header-dropdown .format-tab {
+    width: 100%;
+    text-align: center
+}
+.form__radio__wrap .button,.form__radio__wrap .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .form__radio__wrap .format-tab {
+    position: absolute;
+    top: 0;
+    right: 0
+}
+.modal__order-form .content:last-child {
+    margin-bottom: 0
+}
+.main-navigation .nav-first__item.has-sub.is-hovered .nav-second__item:nth-child(4) {
+    transition-delay: .1 s
+}
+.main-navigation .nav-first__item.has-sub .nav-second__item:nth-last-child(4) {
+    transition-delay: .1 s
+}
+.main-navigation .nav-second__item.has-sub.is-hovered .nav-third__item:nth-child(4) {
+    transition-delay: .1 s
+}
+.main-navigation .nav-second__item.has-sub .nav-third__item:nth-last-child(4) {
+    transition-delay: .1 s
+}
+.mobile-layer-menu__list-first.is-open .mobile-layer-menu__item-first:nth-child(4) {
+    transition-delay: .1 s
+}
+.mobile-layer-menu__list-first .mobile-layer-menu__item-first:nth-last-child(4) {
+    transition-delay: .1 s
+}
+.mobile-layer-menu__list-second.is-open .mobile-layer-menu__item-second:nth-child(4) {
+    transition-delay: .1 s
+}
+.mobile-layer-menu__list-second .mobile-layer-menu__item-second:nth-last-child(4) {
+    transition-delay: .1 s
+}
+.mobile-layer-menu__list-third.is-open .mobile-layer-menu__item-third:nth-child(4) {
+    transition-delay: .1 s
+}
+.mobile-layer-menu__list-third .mobile-layer-menu__item-third:nth-last-child(4) {
+    transition-delay: .1 s
+}
+.cart .button,.cart .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .cart .format-tab {
+    width: 100%;
+    text-align: center
+}
+.cart__amount .button,.cart__amount .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .cart__amount .format-tab {
+    flex: 1 1 auto
+}
+.social-share:hover .social-share__list-item:nth-child(2) {
+    transition-delay: .1 s
+}
+.social-share .social-share__list-item:nth-last-child(2) {
+    transition-delay: .1 s
+}
+.largeimage__image {
+    margin: 0 0 1rem;
+    overflow: hidden
+}
+@media print,screen and (min-width: 48em) {
+    .largeimage__image {
+        position:absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        margin: 0;
+        width: 100%;
+        height: 100%
+    }}
+@media print,screen and (min-width: 48em) {
+    .largeimage__image__file {
+        position:absolute;
+        top: 0;
+        left: 50%;
+        height: auto;
+        min-height: 100%;
+        width: auto;
+        min-width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        transform: translate(-50%)
+    }}
+@media print,screen and (min-width: 48em) {
+    .largeimage__text {
+        position:relative;
+        z-index: 3;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        background: rgba(255,255,255,.8)
+    }}
+.largeimage__text .headline {
+    font: 600 16px/24px "IBM Plex Serif",serif
+}
+@media print,screen and (min-width: 48em) {
+    .largeimage__text .headline {
+        font:600 36px/48px "IBM Plex Serif",serif
+    }}
+@media print,screen and (min-width: 48em) {
+    .largeimage__text p {
+        font:20px/32px IBM Plex Sans,sans-serif
+    }}
+@media print,screen and (min-width: 48em) {
+    .largeimage__text:before {
+        padding-top:80%;
+        display: inline-block;
+        vertical-align: middle;
+        content: ""
+    }}
+@media print,screen and (min-width: 48em) {
+    .largeimage__text__inner {
+        padding:1.5rem;
+        display: inline-block;
+        vertical-align: middle
+    }}
+@media print,screen and (min-width: 64em) {
+    .largeimage__text__inner {
+        padding:2rem
+    }}
+@media print,screen and (min-width: 48em) {
+    .language-switch__list-wrap>.headline--s {
+        margin:0 0 1.5rem
+    }}
+.language-suggest__button-group .button,.language-suggest__button-group .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .language-suggest__button-group .format-tab {
+    margin-bottom: 1rem;
+    margin-right: 2rem
+}
+.language-suggest__button-group .button:last-child,.language-suggest__button-group .frame-type-bdshop_product .format-tab:last-child,.frame-type-bdshop_product .language-suggest__button-group .format-tab:last-child {
+    margin-right: 0
+}
+@media print,screen and (min-width: 48em) {
+    .language-suggest__button-group .button,.language-suggest__button-group .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .language-suggest__button-group .format-tab {
+        margin-bottom:0
+    }}
+@media print,screen and (min-width: 48em) {
+    .tt-address--sidebar>.headline--s {
+        margin:0 0 1.5rem
+    }}
+@media print,screen and (max-width: 47.99875em) {
+    .fact-finder .headline {
+        margin-bottom:.5rem
+    }}
+@media print,screen and (max-width: 47.99875em) {
+    .suggest-search .headline {
+        margin-bottom:.5rem
+    }}
+.journals-content__accordion .headline {
+    margin-bottom: .5rem
+}
+.journals-content__prices-item .headline {
+    margin-bottom: .5rem
+}
+.slider {
+    position: relative
+}
+.slider__track {
+    position: relative;
+    z-index: 1
+}
+.slider__controls {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none
+}
+@media print,screen and (min-width: 48em) {
+    [data-slider-wrap].multiple-children .slider__controls {
+        display:block
+    }}
+.slider__arrow {
+    position: absolute;
+    top: 50%;
+    padding: .75rem 0;
+    transform: translateY(-50%);
+    background: #999;
+    pointer-events: all;
+    cursor: pointer;
+    border-radius: .25rem;
+    transition: background .2s ease-in-out
+}
+.slider__arrow--left {
+    left: -.5rem
+}
+.slider__arrow--right {
+    right: -.5rem
+}
+.slider__arrow:hover,.slider__arrow:focus {
+    outline: 0;
+    background: #4d4d4d
+}
+.slider__arrow__icon path {
+    stroke: #fff
+}
+.slider--products {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none
+}
+@media print,screen and (min-width: 48em) {
+    .slider--products {
+        width:calc(100% - 7rem);
+        margin-left: 3.5rem;
+        margin-right: 3.5rem
+    }}
+.slider--products.is-disabled {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0
+}
+@media print,screen and (min-width: 48em) {
+    .slider--products.is-init {
+        width:calc(100% - 7rem);
+        margin-left: 3.5rem;
+        margin-right: 3.5rem
+    }}
+.slider--products.is-init .slider__controls {
+    display: block
+}
+@media print,screen and (max-width: 47.99875em) {
+    .slider--products .slider__track {
+        overflow:visible
+    }}
+.slider--products .slider__arrow--left {
+    left: -3.5rem
+}
+.slider--products .slider__arrow--left-inside {
+    left: -.5rem
+}
+.slider--products .slider__arrow--right {
+    right: -3.5rem
+}
+.slider--products .slider__arrow--right-inside {
+    right: -.5rem
+}
+.content__image__wrap .slider__enlarge,.slider>.slider__enlarge,.largeimage .slider__enlarge {
+    bottom: .5rem;
+    right: .5rem
+}
+.slider__subnav {
+    margin: 3rem 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem
+}
+.slider__subnav__item {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    transition: color .2s ease-in-out;
+    color: #ccc;
+    font: 16px/24px IBM Plex Sans,sans-serif
+}
+.slider__subnav__item:after {
+    position: absolute;
+    bottom: -.25rem;
+    left: 0;
+    display: block;
+    height: 2px;
+    width: 100%;
+    opacity: 0;
+    background: #000;
+    transition: opacity .2s ease-in-out;
+    content: ""
+}
+.slider__subnav__item:hover {
+    color: #000
+}
+.slider__subnav__item.glide__bullet--active {
+    color: #000;
+    font-weight: 600
+}
+.slider__subnav__item.glide__bullet--active:after {
+    opacity: 1
+}
+.article__filter__options button.button,.article__filter__options .frame-type-bdshop_product button.format-tab,.frame-type-bdshop_product .article__filter__options button.format-tab,.article__filter__options a.button,.article__filter__options .frame-type-bdshop_product a.format-tab,.frame-type-bdshop_product .article__filter__options a.format-tab {
+    width: 100%
+}
+@media print,screen and (min-width: 48em) {
+    .article__filter__options button.button,.article__filter__options .frame-type-bdshop_product button.format-tab,.frame-type-bdshop_product .article__filter__options button.format-tab,.article__filter__options a.button,.article__filter__options .frame-type-bdshop_product a.format-tab,.frame-type-bdshop_product .article__filter__options a.format-tab {
+        width:auto
+    }}
+.pagination__list-item .button,.pagination__list-item .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .pagination__list-item .format-tab {
+    display: block
+}
+.overview__text .button,.overview__text .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .overview__text .format-tab {
+    position: absolute;
+    bottom: 1rem
+}
+@media print,screen and (min-width: 48em) {
+    .overview__text .button,.overview__text .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .overview__text .format-tab {
+        bottom:1.5rem
+    }}
+.overview__text .button.overview__edit,.overview__text .frame-type-bdshop_product .overview__edit.format-tab,.frame-type-bdshop_product .overview__text .overview__edit.format-tab {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: auto
+}
+@media print,screen and (min-width: 48em) {
+    .overview__text .button.overview__edit,.overview__text .frame-type-bdshop_product .overview__edit.format-tab,.frame-type-bdshop_product .overview__text .overview__edit.format-tab {
+        top:1.5rem;
+        right: 1.5rem;
+        bottom: auto
+    }}
+.overview__text--no-button .button,.overview__text--no-button .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .overview__text--no-button .format-tab {
+    position: relative
+}
+.overview__text--no-button.address .button,.overview__text--no-button.address .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .overview__text--no-button.address .format-tab {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    left: auto;
+    bottom: auto
+}
+.card-button__order .button,.card-button__order .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .card-button__order .format-tab {
+    margin: .5rem 0 0 .5rem
+}
+.bubbleicon__item__inner:hover {
+    transform: scale(1.1)
+}
+.honeycomb__cell:hover {
+    z-index: 3;
+    color: #000;
+    transform: scale(1.1)
+}
+.lazy-container {
+    position: relative;
+    overflow: hidden
+}
+.lazy-container:before,.lazy-container:after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    display: block;
+    opacity: 1;
+    transition: opacity .3s ease-in-out
+}
+.lazy-container:before {
+    background-color: #f7f7f7;
+    z-index: 1
+}
+.lazy-container:after {
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    animation: pulsate 1s ease-in-out infinite
+}
+.lazy-container:has(.loaded):before,.lazy-container:has(.loaded):after {
+    opacity: 0
+}
+.lazy-container--pdp-slider {
+    margin: 0 auto;
+    padding: 1rem;
+    max-height: 50vh;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.lazy-container--pdp-slider img {
+    max-height: 100%
+}
+.product-filter__content__submit .button,.product-filter__content__submit .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .product-filter__content__submit .format-tab {
+    width: 100%;
+    text-align: center
+}
+.shop-detail__price__form .button,.shop-detail__price__form .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .shop-detail__price__form .format-tab {
+    margin-top: .5rem;
+    float: right
+}
+.shop-detail__price__form.first .shop-detail__input__wrap,.shop-detail__price__form.first .price__wrap,.shop-detail__price__form.first .button,.shop-detail__price__form.first .frame-type-bdshop_product .format-tab,.frame-type-bdshop_product .shop-detail__price__form.first .format-tab {
+    display: inline-block;
+    float: none
+}
+.frame-type-bdshop_product .author__header .headline--m {
+    padding-top: .5rem
+}
+
+	
