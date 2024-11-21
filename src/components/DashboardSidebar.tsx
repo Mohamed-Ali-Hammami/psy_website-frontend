@@ -64,7 +64,7 @@ const DashboardSidebar: React.FC = () => {
               <Link href="/" className={styles.menuItem}>Home</Link>
               <Link href="/dashboard" className={styles.menuItem}>Dashboard</Link>
               <Link href="/products" className={styles.menuItem}>Products</Link>
-              <Link href="/about-us" className={styles.menuItem}>About Us</Link>
+              <Link href="/about_us" className={styles.menuItem}>About Us</Link>
 
 
               <div className={styles.cartIconContainer} ref={cartRef}>
