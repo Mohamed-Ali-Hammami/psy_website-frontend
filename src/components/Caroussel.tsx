@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { slidesData } from '../data/constants';
 import styles from '../styles/Caroussel.module.css';
@@ -14,26 +14,27 @@ const Carousel: React.FC<CarouselProps> = ({ toggleContactForm }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const handleNext = () => {
+  // Memoizing handleNext and handlePrev with useCallback
+  const handleNext = useCallback(() => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slidesData.length);
     }
-  };
+  }, [isTransitioning]); // Add isTransitioning as a dependency
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setCurrentIndex((prevIndex) =>
         prevIndex === 0 ? slidesData.length - 1 : prevIndex - 1
       );
     }
-  };
+  }, [isTransitioning]); // Add isTransitioning as a dependency
 
   useEffect(() => {
     const intervalId = setInterval(handleNext, 5000);
     return () => clearInterval(intervalId);
-  }, []);
+  }, [handleNext]); // Adding handleNext as a dependency to ensure it works with useEffect
 
   useEffect(() => {
     const timeoutId = setTimeout(() => setIsTransitioning(false), 500);
