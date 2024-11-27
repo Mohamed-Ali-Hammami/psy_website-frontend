@@ -19,52 +19,53 @@ const Cart: React.FC = () => {
 
   return (
     <div className={styles.cartContainer}>
-      {cartItems.length === 0 ? (
-        <span className={styles.emptyCart}>Your cart is empty.</span>
-      ) : (
-        <div className={styles.cartContent}>
-          <div className={styles.cartItems}>
-            {cartItems.map(item => (
-              <div key={item._id} className={styles.cartItem}>
-                <div className={styles.productImage}>
-                  <Image
-                    src={item.image || '/placeholder.jpg'}
-                    alt={item.name}
-                    width={80}
-                    height={80}
-                  />
+        <>
+          <div className={styles.cartContent}>
+            <div className={styles.cartItems}>
+              {cartItems.map(item => (
+                <div key={item._id} className={styles.cartItem}>
+                  <div className={styles.productImage}>
+                    <Image
+                      src={item.image || '/placeholder.jpg'}
+                      alt={item.name}
+                      width={80}
+                      height={80}
+                    />
+                  </div>
+                  <div className={styles.productDetails}>
+                    <h2>{item.name}</h2>
+                    <p className={styles.price}>${formatPrice(item.price)}</p>
+                  </div>
+                  <div className={styles.productActions}>
+                    <button
+                      onClick={() => removeFromCart(item._id)}
+                      className={styles.removeButton}
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
-                <div className={styles.productDetails}>
-                  <h2>{item.name}</h2>
-                  <p className={styles.price}>${formatPrice(item.price)}</p>
-                </div>
-                <div className={styles.productActions}>
-                  <button onClick={() => removeFromCart(item._id)} className={styles.removeButton}>
-                    Remove
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className={styles.orderSummary}>
-            <h3>Order Summary</h3>
-            <div className={styles.summaryRow}>
-              <span>Total</span>
-              <span>${formatPrice(calculateTotalPrice())}</span>
+              ))}
             </div>
-            <Link
-              className={styles.alink}
-              href={`/checkout?cart=${cartData}`} // Passing cart data in the query string
-              passHref
-            >
-              {loading ? 'Processing...' : 'Proceed to Checkout'}
-            </Link>
-            <button onClick={clearCart} className={styles.clearButton}>
-              Clear Cart
-            </button>
+            <div className={styles.orderSummary}>
+              <h3>Order Summary</h3>
+              <div className={styles.summaryRow}>
+                <span>Total</span>
+                <span>${formatPrice(calculateTotalPrice())}</span>
+              </div>
+              <Link
+                className={styles.alink}
+                href={`/checkout?cart=${cartData}`} // Passing cart data in the query string
+                passHref
+              >
+                {loading ? 'Processing...' : 'Proceed to Checkout'}
+              </Link>
+              <button onClick={clearCart} className={styles.clearButton}>
+                Clear Cart
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        </>
     </div>
   );
 };

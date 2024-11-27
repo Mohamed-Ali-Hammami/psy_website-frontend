@@ -11,7 +11,7 @@ import Cart from './Cart';
 import ContactUsForm from './ContactUsForm';
 
 const DashboardSidebar: React.FC = () => {
-  const { cartItems } = useCart();
+  const { cartItems,message,emptyCart } = useCart();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [cartOpen, setCartOpen] = useState(false);
   const [contactFormOpen, setContactFormOpen] = useState(false); // State for Contact Us form
@@ -19,11 +19,17 @@ const DashboardSidebar: React.FC = () => {
   const cartRef = useRef<HTMLDivElement>(null);
   const [isCartHovered, setIsCartHovered] = useState(false);
 
+  const toggleCart = () => {
+    setCartOpen(prev => !prev);
+    if (cartItems.length === 0) {
+      setCartOpen(false);
+      emptyCart(); // Trigger the empty cart message when cart is empty
+    }
+  };
   // Toggle functions
   const handleCartMouseEnter = () => setIsCartHovered(true);
   const handleCartMouseLeave = () => setIsCartHovered(false);
   const toggleSidebar = () => setIsOpen(prev => !prev);
-  const toggleCart = () => setCartOpen(prev => !prev);
   const toggleContactForm = () => setContactFormOpen(prev => !prev); // Toggle Contact Us form
 
   // Handle clicks outside
@@ -81,10 +87,17 @@ const DashboardSidebar: React.FC = () => {
                   </div>
                 </div>
                 {cartOpen && (
-                  <div className={`${styles.cartDropdown} ${cartOpen ? styles.cartOpen : ''}`}>
-                    <Cart />
-                  </div>
+              <div
+                ref={cartRef}
+                className={`${styles.cartDropdown} ${cartOpen ? styles.cartOpen : ''}`}
+              >
+                {cartItems.length === 0 ? (
+                  <div className={styles.emptyCartMessage}>{message}</div> // Display the message if cart is empty
+                ) : (
+                  <Cart />
                 )}
+                </div>
+              )}
               </div>
 
               {/* Contact Us Button */}

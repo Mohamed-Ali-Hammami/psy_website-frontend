@@ -1,4 +1,3 @@
-"use client"
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,16 +9,22 @@ import ContactUsForm from './ContactUsForm';
 import DashboardSidebar from './DashboardSidebar';
 import { useAuth } from '../app/context/AuthContext';
 
-
-
 export default function Navbar() {
   const { isLoggedIn } = useAuth();
   const [cartOpen, setCartOpen] = useState(false);
   const [contactFormOpen, setContactFormOpen] = useState(false);
-  const { cartItems } = useCart();
+  const { cartItems, message } = useCart();  // Get the message from context
   const cartRef = useRef<HTMLDivElement>(null);
 
-  const toggleCart = () => setCartOpen(!cartOpen);
+  const toggleCart = () => {
+    // Close the cart if it's empty
+    if (cartItems.length === 0) {
+      setCartOpen(false); // Close the cart dropdown
+    } else {
+      setCartOpen(!cartOpen); // Toggle the cart visibility
+    }
+  };
+
   const toggleContactForm = () => setContactFormOpen(!contactFormOpen);
 
   // Close cart when clicking outside
@@ -58,11 +63,10 @@ export default function Navbar() {
     };
   }, [isLoggedIn]);
 
-
   return (
     <>
       <nav className={styles.navbar}>
-          <DashboardSidebar />
+        <DashboardSidebar />
 
         {/* Logo Section */}
         <div className={styles.logo}>
@@ -87,7 +91,6 @@ export default function Navbar() {
 
           {/* User Avatar Dropdown */}
           <UserAvatarDropdown />
-
           {/* Cart Icon and Dropdown */}
           <div className={styles.cartIconContainer}>
             <div className={styles.cartIcon} onClick={toggleCart}>
@@ -99,7 +102,11 @@ export default function Navbar() {
                 ref={cartRef}
                 className={`${styles.cartDropdown} ${cartOpen ? styles.cartOpen : ''}`}
               >
-                <Cart />
+                {cartItems.length === 0 ? (
+                  <div className={styles.emptyCartMessage}>{message}</div> // Display the message if cart is empty
+                ) : (
+                  <Cart />
+                )}
               </div>
             )}
           </div>
@@ -113,7 +120,6 @@ export default function Navbar() {
             </div>
           </div>
         )}
-
       </nav>
     </>
   );

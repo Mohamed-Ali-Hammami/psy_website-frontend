@@ -108,7 +108,16 @@
 .cartItemAdded {
     background-color: green;
 }
-
+.emptyCartMessage {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
 .contactLink {
     display: flex;
     align-items: center;

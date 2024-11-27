@@ -1,40 +1,85 @@
+/* Base styles for the notification container */
 .notification {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    padding: 0.5rem 1rem;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.75);
-    border-radius: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    animation: slideIn 0.5s, slideOut 0.5s 1.5s;
-    z-index: 1000;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  opacity: 0; /* Start as invisible */
+  transform: translateY(-20px); /* Start slightly above */
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  z-index: 3;
+}
+
+/* Show the notification with a smooth transition */
+.notification.show {
+  opacity: 1; /* Make it visible */
+  transform: translateY(0); /* Slide into position */
+  animation: bounceIn 0.5s ease-out forwards; /* Apply bounce-in animation */
+}
+
+/* Close button styles */
+.closeButton {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+}
+
+/* Notification type colors */
+.notification.success {
+  background-color: green; /* Success color */
+}
+
+.notification.error {
+  background-color: red; /* Error color */
+}
+
+.notification.info {
+  background-color: blue; /* Info color */
+}
+
+/* Notification text styles */
+.notification p {
+  font-size: 1rem;
+  color: inherit;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+/* Bounce-in animation for the slide-in effect */
+@keyframes bounceIn {
+  0% {
+    transform: translateX(100%); /* Start from right off-screen */
+    opacity: 0;
   }
-  
-  .notification p {
-    font-size: 1rem;
-    color: inherit;
-    margin: 0;
+  60% {
+    transform: translateX(-10%); /* Move a little to the left */
   }
-  
-  @keyframes slideIn {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
+  80% {
+    transform: translateX(5%); /* Bounce slightly */
   }
-  
-  @keyframes slideOut {
-    from {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateX(100%);
-      opacity: 0;
-    }
+  100% {
+    transform: translateX(0); /* End at the visible position */
+    opacity: 1;
   }
+}
+
+/* Slide-out animation for the fade-out effect */
+@keyframes slideOut {
+  from {
+    transform: translateY(0); /* Start at the visible position */
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px); /* Slide out upwards */
+    opacity: 0;
+  }
+}
