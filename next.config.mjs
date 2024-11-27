@@ -7,16 +7,16 @@ const nextConfig = {
         hostname: 'cdn.sanity.io',
       },
       {
-        protocol: 'http',  // or 'https', depending on your local setup
+        protocol: 'http', 
         hostname: 'localhost',
       },
       {
-        protocol: 'http',  // or 'https', depending on your local setup
+        protocol: 'http',  
         hostname: 'localhost',
         port: '5000',
       },
       {
-        protocol: 'https',  // assuming your deployed site uses https
+        protocol: 'https', 
         hostname: 'psywebsite-frontend-production.up.railway.app',
       },
     ],
