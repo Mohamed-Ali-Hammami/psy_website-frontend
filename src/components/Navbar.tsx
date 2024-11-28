@@ -13,24 +13,29 @@ export default function Navbar() {
   const { isLoggedIn } = useAuth();
   const [cartOpen, setCartOpen] = useState(false);
   const [contactFormOpen, setContactFormOpen] = useState(false);
-  const { cartItems, message } = useCart();  // Get the message from context
+  const { cartItems, message } = useCart(); // Get the message from context
   const cartRef = useRef<HTMLDivElement>(null);
 
   const toggleCart = () => {
-    // Close the cart if it's empty
-    if (cartItems.length === 0) {
-      setCartOpen(false); // Close the cart dropdown
-    } else {
-      setCartOpen(!cartOpen); // Toggle the cart visibility
+    // Only toggle if there are items in the cart
+    if (cartItems.length > 0) {
+      setCartOpen((prev) => !prev);
     }
   };
 
   const toggleContactForm = () => setContactFormOpen(!contactFormOpen);
 
+  useEffect(() => {
+    // Close cart automatically when it becomes empty
+    if (cartItems.length === 0) {
+      setCartOpen(false);
+    }
+  }, [cartItems]);
+
   // Close cart when clicking outside
   const handleClickOutside = (event: MouseEvent) => {
     if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
-      setCartOpen(false); // Close the cart if clicked outside
+      setCartOpen(false);
     }
   };
 
@@ -48,7 +53,7 @@ export default function Navbar() {
         });
         if (!res.ok) throw new Error(`Failed to fetch user details: ${res.statusText}`);
       } catch (err) {
-        console.error("Error fetching user details:", err);
+        console.error('Error fetching user details:', err);
       }
     };
 
@@ -91,6 +96,7 @@ export default function Navbar() {
 
           {/* User Avatar Dropdown */}
           <UserAvatarDropdown />
+
           {/* Cart Icon and Dropdown */}
           <div className={styles.cartIconContainer}>
             <div className={styles.cartIcon} onClick={toggleCart}>
