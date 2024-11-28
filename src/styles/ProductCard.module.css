@@ -1,25 +1,23 @@
 /* ProductCard.module.css */
 .product-card {
-  background-color: rgba(255, 255, 255, 0.9); /* Light, slightly transparent background */
+  position: relative;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
   border-radius: 8px; /* Soft corners */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   overflow: hidden; /* Ensure child elements don’t overflow */
-  transition: transform 0.2s ease; /* Smooth scaling on hover */
   display: flex; /* Use flexbox for layout */
   flex-direction: column; /* Stack items vertically */
   width: 100%; /* Full width for responsiveness */
   max-width: 400px; /* Set a max width for the card */
-}
-
-.product-card:hover {
-  transform: translateY(-2px); /* Slight lift effect on hover */
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .product-img {
-  width: 100%; /* Full width */
-  height: 250px; /* Fixed height for images */
-  position: relative; /* Position relative for Image component */
-  overflow: hidden; /* Ensure image does not overflow */
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
 }
 
 .product-img img {
@@ -29,39 +27,45 @@
 }
 
 .product-info {
-  padding: 1rem; /* Padding around product info */
+  padding: 1.5rem;
   display: flex;
-  flex-direction: column; /* Stack text elements vertically */
-  flex-grow: 1; /* Allow to take up remaining space */
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
 }
+
 
 .product-text {
-  margin-bottom: 1rem; /* Space between text and price/buttons */
+  margin-bottom: 1.5rem;
 }
-
 .product-text h1 {
-  font-size: 1.6rem; /* Size for product name */
-  color: #2c3e50; /* Dark navy for headers */
-  margin: 0; /* Remove default margin */
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .product-text p {
-  font-size: 1rem; /* Smaller subtitle */
-  color: #555; /* Gray color for subtler tone */
-  margin: 0.5rem 0; /* Space above and below */
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  opacity: 0.8;
 }
 
-.product-price-btn {
+/* Flex container for price and add to cart button */
+.price-and-cart {
   display: flex;
-  flex-direction: column; /* Stack price and buttons vertically */
-  align-items: stretch; /* Stretch buttons to full width */
+  align-items: center;
+  gap: 10px; /* Space between price and button */
+  margin-bottom: 0.5rem; /* Space below the price section */
 }
 
 .discount-price {
   font-size: 1.5rem; /* Larger font for discount price */
   color: #e74c3c; /* Red for discount indication */
   font-weight: bold; /* Bold for emphasis */
-  margin-bottom: 0.5rem; /* Space below discount price */
 }
 
 .original-price {
@@ -71,51 +75,63 @@
   margin-left: 0.5rem; /* Space from discount price */
 }
 
+.add-to-cart-button {
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: #333; /* Red background for clear button */
+  border: none;
+  padding: 10px 15px; /* Increased padding */
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.add-to-cart-button:hover {
+  background-color: #b3a700;/* Darker red on hover */
+  transform: scale(1.05); /* Scale up on hover */
+}
+
 .product-button {
-  background-color: #2c3e50; /* Dark navy for buttons */
-  color: #ffffff; /* White text for contrast */
-  border: none; /* No border */
-  border-radius: 4px; /* Slight rounding */
-  padding: 0.5rem; /* Padding for buttons */
-  font-size: 1rem; /* Standard button font size */
-  cursor: pointer; /* Pointer cursor for buttons */
-  transition: background-color 0.3s ease, transform 0.2s; /* Smooth transitions */
-  margin-top: 0.5rem; /* Space above buttons */
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: #333; /* Red background for clear button */
+  border: none;
+  padding: 10px 15px; /* Increased padding */
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
 .product-button:hover {
-  background-color: #4a90e2; /* Lighter blue on hover */
-  transform: scale(1.02); /* Slight scale effect */
+  background-color: #0056b3;/* Darker red on hover */
+  transform: scale(1.05); /* Scale up on hover */
 }
+
 .download-button {
-    color: #fff;
-    font-weight: 500;
-    background-color: #333;
-    border: none;
-    padding: 8px 12px;
-    text-align: center;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-    cursor: pointer;
+  color: #fff;
+  font-weight: 500;
+  background-color: #333;
+  border: none;
+  padding: 8px 12px;
+  text-align: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
 }
 
 .download-button:hover {
-    background-color: #0056b3; /* Darker red for hover */
+  background-color: #0056b3; /* Darker red for hover */
 }
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .product-card {
-    margin: 1rem; /* Margin for spacing on smaller screens */
+    max-width: 100%; /* Full width on smaller screens */
   }
-
-  .product-img {
-    height: 200px; /* Adjust height for smaller screens */
-  }
-
-  .product-text h1 {
-    font-size: 1.4rem; /* Smaller header size */
-  }
-
 }

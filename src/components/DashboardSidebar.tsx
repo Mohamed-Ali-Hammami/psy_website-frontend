@@ -76,16 +76,16 @@ const DashboardSidebar: React.FC = () => {
                 <UserAvatarDropdown />
               </div>
               <h2 className={styles.menuTitle}>Navigation</h2>
-              <Link href="/" className={styles.menuItem}>
+              <Link href="/" onClick={toggleSidebar} className={styles.menuItem}>
                 Home
               </Link>
-              <Link href="/dashboard" className={styles.menuItem}>
+              <Link href="/dashboard" onClick={toggleSidebar} className={styles.menuItem}>
                 Dashboard
               </Link>
-              <Link href="/products" className={styles.menuItem}>
+              <Link href="/products" onClick={toggleSidebar} className={styles.menuItem}>
                 Products
               </Link>
-              <Link href="/about_us" className={styles.menuItem}>
+              <Link href="/about_us" onClick={toggleSidebar} className={styles.menuItem}>
                 About Us
               </Link>
 

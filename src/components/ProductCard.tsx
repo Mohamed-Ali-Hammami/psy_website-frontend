@@ -1,7 +1,9 @@
 "use client";
+import { useState } from 'react';
 import { urlFor } from '../sanity/lib/image';
 import Image from 'next/image';
 import styles from '../styles/ProductCard.module.css';
+import ProductDetails from './ProductDetails'; // Import ProductDetails
 
 interface Product {
   _id: string;
@@ -16,16 +18,18 @@ interface Product {
       _type: string;
     };
   };
-  pdfUrl?: string; // Update to directly reference the PDF URL
+  pdfUrl?: string;
 }
 
 interface ProductCardProps {
   product: Product;
   addToCart: (item: { _id: string; name: string; price: number; image: string }) => void;
-  isPurchased: boolean; // Add this prop
+  isPurchased: boolean;
 }
 
 export default function ProductCard({ product, addToCart, isPurchased }: ProductCardProps) {
+  const [showDetails, setShowDetails] = useState(false); // State to control showing details
+
   const handleAddToCart = () => {
     addToCart({
       _id: product._id,
@@ -40,16 +44,16 @@ export default function ProductCard({ product, addToCart, isPurchased }: Product
       try {
         const response = await fetch(product.pdfUrl);
         const blob = await response.blob();
-  
+
         // Create a new link for the blob
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
         link.download = `${product.name}.pdf`;
-  
+
         // Append to the document and trigger download
         document.body.appendChild(link);
         link.click();
-  
+
         // Clean up
         document.body.removeChild(link);
         URL.revokeObjectURL(link.href);
@@ -58,24 +62,34 @@ export default function ProductCard({ product, addToCart, isPurchased }: Product
       }
     }
   };
-  
+
+  const handleShowDetails = () => {
+    setShowDetails(true); // Show details modal
+  };
+
+  const handleCloseDetails = () => {
+    setShowDetails(false); // Close details modal
+  };
 
   return (
     <div className={styles['product-card']}>
-        <Image className={styles['product-img']}
-          src={urlFor(product.image).url()}
-          alt={product.name}
-          width={327}
-          height={420}
-          priority
-          style={{ objectFit: 'cover' }}
-        />
+      <Image
+        className={styles['product-img']}
+        src={urlFor(product.image).url()}
+        alt={product.name}
+        width={327}
+        height={420}
+        priority
+        style={{ objectFit: 'cover' }}
+      />
       <div className={styles['product-info']}>
         <div className={styles['product-text']}>
           <h1>{product.name}</h1>
           <p>{product.description}</p>
         </div>
-        <div className={styles['product-price-btn']}>
+
+        {/* Conditionally render buttons, price, and download section */}
+        <div className={styles['price-and-cart']}>
           {product.discountPrice ? (
             <>
               <p className={styles['discount-price']}>
@@ -92,18 +106,38 @@ export default function ProductCard({ product, addToCart, isPurchased }: Product
               <span>${product.price.toFixed(2)}</span>
             </p>
           )}
-          {isPurchased ? (
-            <button onClick={handleDownload} className={`${styles['product-button']} ${styles['download-button']}`}>
-              Download
-            </button>
-          ) : (
-            <button type="button" onClick={handleAddToCart} className={styles['product-button']}>
-              Buy now
+          {!isPurchased && (
+            <button
+              type="button"
+              onClick={handleAddToCart}
+              className={styles['add-to-cart-button']}
+            >
+              Add to Cart
             </button>
           )}
-
         </div>
+
+        {/* Conditionally render the download button if purchased */}
+        {isPurchased && (
+          <button
+            onClick={handleDownload}
+            className={`${styles['product-button']} ${styles['download-button']}`}
+          >
+            Download
+          </button>
+        )}
+
+        <button
+          type="button"
+          onClick={handleShowDetails} // Show the product details
+          className={styles['product-button']}
+        >
+          See Details
+        </button>
       </div>
+
+      {/* Conditionally render ProductDetails modal */}
+      {showDetails && <ProductDetails product={product} onClose={handleCloseDetails} />}
     </div>
   );
 }

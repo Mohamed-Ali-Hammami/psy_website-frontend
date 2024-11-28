@@ -1,86 +1,114 @@
-/* productsPage.css */
+/* General styling for the products page */
 .productsPage {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 30px;
-  justify-content: flex-start; /* Adjusted to avoid too much space between elements */
- 
+  justify-content: flex-start;
+  min-height: 100vh;
 }
 
+/* Styling for the page heading */
 .heading {
-  margin-top: 9px;
-  margin-bottom: 9px;
-  font-size: 2.8rem; /* Increased font size */
-  color: #ffffff; /* White text color */
-  text-shadow: 
-    2px 2px 4px rgba(0, 0, 0, 0.5), /* First shadow: offset (2px right, 2px down), blur radius 4px, semi-transparent black */
-    -1px -1px 2px rgba(0, 0, 0, 0.5); /* Second shadow: offset (-1px left, -1px up), blur radius 2px, semi-transparent black */
-    border-bottom: 2px solid #000000; /* Fine line below the heading */
-    padding-bottom: 10px; /* Padding for spacing */
-  }
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 3rem; /* Larger font for the heading */
+  color: #1a1a1a; /* Dark text for visibility */
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid #007bff; /* Underline effect with a blue accent */
+  padding-bottom: 15px;
+}
 
-
+/* Styling for the presentation text */
 .presentationText {
-  font-size: 1.2em;
-  color: #333; /* Changed to a visible color */
+  font-size: 1.1rem;
+  color: #444;
   text-align: center;
   margin-bottom: 40px;
-  line-height: 1.6;
+  line-height: 1.8;
   max-width: 1200px;
-  padding: 20px; /* Added padding for better alignment */
-  border: 1px solid #ccc; /* Fine line around the presentation text */
-  border-radius: 8px; /* Rounded corners */
-  background-color: #f9f9f9; /* Light background for presentation box */
+  padding: 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for the product list */
 .productList {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  border: 1px solid #ccc; /* Fine line around the product list */
-  border-radius: 8px; /* Rounded corners */
-  background-color: #ffffffdc; /* White background for product list */
+  background: #2c2c2cd0;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* Styling for sorting options section */
 .sortOptions {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 10px;
-  border-bottom: 1px solid #ccc; /* Fine line below sorting options */
-  padding-bottom: 10px; /* Padding for spacing */
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 2px solid #007bff;
 }
 
 .sortOptions label {
   font-size: 1.1em;
+  color: #ffffff;
   font-weight: 600;
-  color: #333;
 }
 
 .sortOptions select {
-  padding: 8px 12px;
-  font-size: 1em;
-  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #007bff;
   border-radius: 5px;
   background-color: #f9f9f9;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .sortOptions select:focus {
-  border-color: #007bff;
-  outline: none;
+  border-color: #0056b3;
   background-color: #e6f7ff;
+  outline: none;
 }
 
+/* Responsive design adjustments */
 @media (max-width: 768px) {
   .heading {
-    font-size: 2em; /* Slightly smaller heading for mobile */
+    font-size: 2.5rem;
   }
 
   .presentationText {
-    font-size: 1.1em; /* Adjust text size for better readability on mobile */
+    font-size: 1rem;
   }
+
+  .sortOptions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .productList {
+    padding: 1rem;
+  }
+
+  .productCard {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+/* Additional hover effects for the sort options */
+.sortOptions select:hover {
+  background-color: #f1f1f1;
 }
