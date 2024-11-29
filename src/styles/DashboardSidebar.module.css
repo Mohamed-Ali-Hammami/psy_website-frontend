@@ -83,7 +83,7 @@
   margin-bottom: 15px;
   text-align: left;
   padding: 10px;
-  border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid #0056b3;
   transition: color 0.3s;
 }
 
@@ -91,14 +91,15 @@
   text-decoration: none;
   color: inherit;
   padding: 12px 15px;
-  background-color: #f9f9f9cc;
+  background-color: #f9f9f9af;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
-  margin: 10px 0;
+  border-radius: 29px;
+  margin: 8px 0;
   text-align: left;
   transition: background-color 0.3s, transform 0.2s;
   font-size: 16px;
+  position: relative; /* Set relative positioning for the parent */
 }
 
 .menuItem:hover {
@@ -107,18 +108,19 @@
 }
 
 .contactus {
-  text-decoration: none;
   color: inherit;
-  padding: 14px 64px;
-  background-color: #f9f9f9cc;
+  width: 100%;
+  height: 50px;
+  background-color: #f9f9f9af;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
-  margin: 10px 0;
+  border-radius: 29px;
   transition: background-color 0.3s, transform 0.2s;
   font-size: 16px;
-  width: 100%;
+  text-align: left; /* Aligns text to the left */
+  padding-left: 15px; /* Adds space between the text and the edge */
 }
+
 
 .contactus:hover {
   background-color: #e0e0e0;
@@ -126,7 +128,6 @@
 }
 
 .cartIcon img {
-  width: auto;
   height: 23px;
 }
 
@@ -137,13 +138,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
- background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(46, 46, 46, 0.884);
   color: #333;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   padding: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
+  
 
 .cartOpen {
   display: block;
@@ -159,20 +162,38 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  position: absolute;
-  top: -10px;
-  right: -10px;
+  position: absolute; /* Position it relative to the parent */
+  top: -5px; /* Adjust to place the badge at the top-right corner */
+  right: -5px; /* Adjust distance from the right edge */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow for better visibility */
 }
 
 .cartItemAdded {
   background-color: green;
 }
 
+/* Always visible on mobile screens */
+@media (max-width: 768px) {
+  .cartItemCount.alwaysVisible {
+    display: flex;
+  }
+}
+
+/* Only show on hover for larger screens (PC) */
+@media (min-width: 769px) {
+  .cartItemCount {
+    display: none; /* Initially hide */
+  }
+  
+  .toggleButton:hover .cartItemCount {
+    display: flex; /* Show on hover */
+  }
+}
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .sidebarOpen {
-    width: 100%; /* Full width on smaller screens */
-    height: auto; /* Allow height to adjust */
+    width: 70%; /* Full width on smaller screens */
+    height: 100%; /* Allow height to adjust */
   }
 
   .sidebarClosed {
@@ -180,6 +201,8 @@
   }
 
   .toggleButton {
+    position:fixed;
+    right: 80%;
     font-size: 14px; /* Smaller text for mobile */
   }
 
@@ -197,6 +220,7 @@
   .menuItem {
     font-size: 15px; /* Slightly larger text for tablets */
   }
+  
 }
 
 /* Additional styles for better aesthetics */

@@ -13,15 +13,20 @@ export default function Navbar() {
   const { isLoggedIn } = useAuth();
   const [cartOpen, setCartOpen] = useState(false);
   const [contactFormOpen, setContactFormOpen] = useState(false);
-  const { cartItems, message } = useCart(); // Get the message from context
+  const { cartItems,emptyCart } = useCart(); // Get the message from context
   const cartRef = useRef<HTMLDivElement>(null);
 
+  // Toggle cart visibility, with emptying logic if cart is empty
   const toggleCart = () => {
-    // Only toggle if there are items in the cart
-    if (cartItems.length > 0) {
-      setCartOpen((prev) => !prev);
-    }
+    setCartOpen((prev) => {
+      const nextState = !prev;
+      if (nextState && cartItems.length === 0) {
+        emptyCart(); // Trigger empty cart logic without directly displaying the message
+      }
+      return nextState;
+    });
   };
+
 
   const toggleContactForm = () => setContactFormOpen(!contactFormOpen);
 
@@ -97,27 +102,38 @@ export default function Navbar() {
           {/* User Avatar Dropdown */}
           <UserAvatarDropdown />
 
-          {/* Cart Icon and Dropdown */}
-          <div className={styles.cartIconContainer}>
-            <div className={styles.cartIcon} onClick={toggleCart}>
-              <Image src="/images/cart.svg" alt="Cart Icon" width={32} height={32} />
-              <span className={styles.cartItemCount}>{cartItems.length || '0'}</span>
-            </div>
-            {cartOpen && (
-              <div
-                ref={cartRef}
-                className={`${styles.cartDropdown} ${cartOpen ? styles.cartOpen : ''}`}
-              >
-                {cartItems.length === 0 ? (
-                  <div className={styles.emptyCartMessage}>{message}</div> // Display the message if cart is empty
-                ) : (
-                  <Cart />
+
+              {/* Cart icon with item count */}
+              <div className={styles.cartIconContainer} ref={cartRef}>
+                <div className={styles.menuItem}>
+                  <div
+                    className={styles.cartIcon}
+                    onClick={toggleCart}
+                  >
+                    <Image
+                      src="/images/cart.svg"
+                      alt="Cart Icon"
+                      width={32}
+                      height={32}
+                    />
+                    <span className={styles.cartItemCount}>
+                      {cartItems.length || "0"}
+                    </span>
+                  </div>
+                </div>
+                {/* Cart dropdown content */}
+                {cartOpen && cartItems.length > 0 && (
+                  <div
+                    ref={cartRef}
+                    className={`${styles.cartDropdown} ${
+                      cartOpen ? styles.cartOpen : ""
+                    }`}
+                  >
+                    <Cart />
+                  </div>
                 )}
               </div>
-            )}
-          </div>
         </div>
-
         {/* Modals and Forms */}
         {contactFormOpen && (
           <div className={styles.modalOverlay} onClick={toggleContactForm}>

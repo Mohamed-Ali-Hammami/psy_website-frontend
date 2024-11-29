@@ -1,97 +1,108 @@
+/* Base Styles */
 .container {
-  position: relative; /* Ensure the wrapper has relative positioning */
-  width: 80%;  /* Adjust width to a percentage of the container */
-  max-width: 800px;  /* You can still set a max-width for the maximum allowed width */
+  position: relative;
+  width: 90%; /* Adjust width for mobile screens */
+  max-width: 800px;
   margin: 40px auto;
   text-align: center;
   padding: 40px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.767), rgba(0, 0, 0, 0.1)),url('/images/vbv.jpg'); /* Set your background image here */
-  background-size: cover; /* Ensure the image covers the entire wrapper */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent image repetition */
-  border-radius: 5px;
+  background-image: linear-gradient(rgba(51, 51, 51, 0.7), rgba(255, 255, 255, 0.397)), url('/images/vbv.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  
+  transition: transform 0.3s ease;
 }
+
+.container:hover {
+  transform: scale(1.02); /* Subtle zoom effect on hover */
+}
+
 .container h1 {
-  background-color: transparent; /* Keep background transparent */
-  border: 2px solid #335880; /* White border around the background */
-  border-radius: 5px;  /* Rounded corners for the border */
+  background-color: transparent;
+  border: 2px solid #335880;
+  border-radius: 5px;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 2rem; /* Increased font size for a bolder header */
-  font-weight: 600; /* Semi-bold font weight */
-  padding: 10px; /* Add padding inside the border to space the text from the border */
-      font-size: 2.8rem; /* Increased font size */
-      color: #ffffff; /* White text color */
-      text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.5), /* First shadow: offset (2px right, 2px down), blur radius 4px, semi-transparent black */
-        -1px -1px 2px rgba(0, 0, 0, 0.5); /* Second shadow: offset (-1px left, -1px up), blur radius 2px, semi-transparent black */
-    } 
+  font-size: 2.8rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.container h1:hover {
+  color: #f5a623; /* Hover effect for title */
+}
+
 .cartSummary {
-  margin-bottom: 30px; /* Increased margin for separation from other content */
-  padding: 15px; /* Added padding inside the summary for better readability */
-  background-color: #ffffffd8; /* Made background fully opaque for clarity */
-  border-radius: 8px; /* Slightly larger radius for a modern look */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Improved shadow for a more polished appearance */
-  transition: box-shadow 0.3s ease; /* Added transition for smoother hover effect */
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
 }
 
 .cartSummary:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle hover effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .cartSummary h2 {
-  color: #333333; /* Slightly darker text for better contrast */
-  border-bottom: 2px solid #0d0e5f; /* Increased border thickness for emphasis */
-  padding-bottom: 10px; /* Added padding for better spacing below the header */
-  font-size: 24px; /* Increased font size for a more prominent heading */
+  color: #333;
+  border-bottom: 2px solid #0d0e5f;
+  padding-bottom: 10px;
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
-.ItemName {
-  font-size: 14px;
-  font-weight: bold;
-  margin: 0; /* Ensure no extra margin around the text */
-  align-self: flex-start; /* Aligns the text higher relative to the image */
-}
 .cartItem {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
   border-bottom: 1px solid #0d0e5fc5;
 }
-.cartItemDetails{
+
+.cartItemDetails {
   display: flex;
-  align-items: center; /* Vertically aligns the text and image */
-  gap: 20px; /* Space between the text and image */
+  align-items: center;
+  gap: 20px;
 }
+
+.cartItemDetails img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 .totalPrice {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
   margin-top: 10px;
+  font-size: 1.2rem;
 }
 
-
-.checkoutButton { 
-  background-color: #313131; /* Default background color */
-  color: #fff; /* Text color */
-  font-weight: bold; /* Bold text */
-  padding: 12px; /* Padding inside the button */
-  margin: 10px 0; /* Margin for spacing */
-  border: none; /* No border */
-  border-radius: 8px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for background color and scaling */
-  width: 70%; /* Full width */
+.checkoutButton {
+  background-color: #313131;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 70%;
 }
 
-/* Hover effect for the button */
 .checkoutButton:hover {
-  background-color: #335880; /* Darker shade on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #335880;
+  transform: translateY(-2px);
 }
+
 .checkoutButton:disabled {
   background-color: #aaa;
   cursor: not-allowed;
@@ -99,27 +110,32 @@
 
 .errorMessage {
   color: red;
-  background-color: #aaa;
+  background-color: rgba(255, 0, 0, 0.2);
   font-size: 14px;
   margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
 }
-
 /*-- checkbox --*/
 .wthree-text label {
-  font-size: 0.9em;
-  color: #fff;
-  font-weight: 200;
-  cursor: pointer;
+  font-size: 1rem;
+  color: #0f0f0f;
+  font-weight: bold;
   display: flex;
   align-items: center;
+  transition: color 0.3s ease;
 }
-
+.wthreeText label:hover {
+  cursor: pointer;
+  color: #f5a623; /* Hover effect on the label */
+  font-weight: bold;
+}
 input.checkbox {
   position: relative;
-  background: rgb(114, 15, 15); /* Initial background color */
+  background: rgb(255, 255, 255); /* Initial background color */
   cursor: pointer;
-  width: 1em;
-  height: 1em;
+  width: 1.5em;
+  height: 1.5em;
   margin-right: 8px;
   transition: background 0.4s ease; /* Smooth transition for background color */
 
@@ -144,9 +160,9 @@ input.checkbox:after {
   position: absolute;
   top: 0;
   left: 0;
-  width: 1.2em;
-  height: 1.2em;
-  border: 1px solid #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid #000000;
   transition: 0.4s ease-in-out;
 }
 
@@ -175,8 +191,11 @@ input.checkbox:checked:after {
   100% { border-bottom-color: #fff; border-left-color: #fff; }
 }
 
+input.checkbox:checked:after {
+  animation: ripple 0.4s ease;
+}
 
-/* Updated Modal Styling */
+/* Modal Styling */
 .modal {
   position: fixed;
   top: 0;
@@ -191,45 +210,84 @@ input.checkbox:checked:after {
 }
 
 .modalContent {
-  background-color: rgb(153, 153, 153);
-  text-align: center;
-  font-weight: bolder;
-  position: relative;
+  background-color: #fff;
   padding: 20px;
-  max-width: 600px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 80%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  max-height: 80vh;
 }
 
 .modalHeader {
-  position: relative;
-  height: 30px;
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
 }
 
 .closeModalButton {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: none;
+  background: transparent;
   border: none;
-  font-size: 24px;
+  font-size: 1.5rem;
   cursor: pointer;
   color: #333;
-  padding: 0;
-  line-height: 1;
 }
 
 .closeModalButton:hover {
-  color: red;
+  color: #f5a623;
 }
 
-.termsButton {
-  cursor: pointer;
-  font-weight: bold;
-  font-size: small;
+.modalHeader h2 {
+  font-size: 1.8rem;
+  color: #333;
 }
 
-.termsButton:hover {
-  color: darkblue;
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .container h1 {
+    font-size: 2rem;
+    padding: 8px;
+  }
+
+  .cartSummary {
+    padding: 10px;
+  }
+
+  .cartItemDetails {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cartItemDetails img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .checkoutButton {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .modalContent {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .checkoutButton {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
 }

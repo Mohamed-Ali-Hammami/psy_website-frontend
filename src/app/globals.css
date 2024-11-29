@@ -283,3 +283,64 @@ body::before {
     opacity: 0;
   }
 }
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* Slightly smaller font size for better fit */
+  }
+
+  body {
+    background-attachment: scroll; /* Avoid fixed background on smaller devices */
+    padding: 1rem; /* Add padding for better spacing on smaller screens */
+    background-size: contain;
+    background-position: top; 
+  }
+
+  .hero {
+    padding: 3rem 1rem; /* Reduced padding for a compact layout */
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem; /* Smaller font size for titles */
+  }
+
+  .hero-content p {
+    font-size: 1rem; /* Adjust paragraph size for readability */
+  }
+
+  .features {
+    flex-direction: column; /* Stack features vertically */
+    align-items: center;
+    margin: 1.5rem 0; /* Adjust margins for better spacing */
+  }
+
+  .feature {
+    flex-basis: 90%; /* Take up most of the width */
+    margin-bottom: 1.5rem; /* Add space between stacked features */
+  }
+
+  .cta-section {
+    padding: 1rem; /* Compact padding for smaller screens */
+    font-size: 0.875rem; /* Adjust text size */
+  }
+
+  .cta-button {
+    font-size: 0.8rem; /* Reduce button text size */
+    padding: 0.4rem 0.8rem; /* Smaller button padding */
+  }
+
+  .colorlib-bubbles li {
+    width: 10px; /* Smaller bubble sizes */
+    height: 10px;
+  }
+
+  .carousel-title, .product-listing-title {
+    font-size: 1.6rem; /* Adjust titles for smaller screens */
+    margin-top: 50px; /* Reduce top margin for space-saving */
+  }
+
+  .product-listing-subtitle {
+    font-size: 1rem; /* Adjust font size for subtitles */
+    padding: 0 1rem; /* Add padding for better fit */
+  }
+}

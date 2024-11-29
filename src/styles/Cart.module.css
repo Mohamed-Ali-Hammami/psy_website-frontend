@@ -1,158 +1,160 @@
-/* Cart Content */
+
+.cartContainer {
+  padding: 0.5rem;
+  background-color: transparent;
+  box-shadow: none;
+}
+
 .cartContent {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
-.emptyCart {
-  font-size: 1.0rem; /* Maintain readability */
-  color: #555; /* Subtle text color for paragraph */
-  line-height: 1.5; /* Improved line height for clarity */
-  padding: 0 1rem; /* Padding for text */
-  display: flex;
-  position: relative;
-}
+
 .cartItems {
-  margin-bottom: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .cartItem {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
-  padding: 10px;
-  background-color: #ffffff; /* White background for items */
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for hover effect */
-}
-
-/* Hover effect for Cart Item */
-.cartItem:hover {
-  background-color: #f1f1f1; /* Light gray background on hover */
-  transform: translateY(-2px); /* Slight lift effect on hover */
-}
-
-/* Product Image */
-.productImage img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background-color:rgba(0, 86, 179, 0.9) ;
   border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
 }
 
-/* Product Details */
+.cartItem:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+}
+
+.productImage {
+  margin-right: 0.75rem;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 50px;
+  height: 50px;
+}
+
+.productDetails {
+  flex-grow: 1;
+}
+
 .productDetails h2 {
-  margin: 0;
-  font-size: 16px;
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
   font-weight: 600;
-  color: #333; /* Dark color for product name */
 }
 
 .price {
-  font-size: 14px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
-  color: #555; /* Darker gray for price text */
 }
 
-/* Product Actions (Buttons) */
-.productActions button {
-  color: #fff;
-  cursor: pointer;
-  font-weight: 500;
-  background-color: #333; /* Bootstrap primary color */
-  border: none;
-  padding: 10px 15px; /* Increased padding for buttons */
-  text-align: center;
-  margin-bottom: 5px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-}
-
-/* Hover effect for Product Actions button */
-.productActions button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: scale(1.05); /* Slight scale effect on hover */
-}
-
-/* Order Summary */
-.orderSummary {
+.productActions {
   display: flex;
-  flex-direction: column;
-  margin-top: 20px; /* Margin for spacing */
- 
+  align-items: center;
 }
 
-/* Order Summary Title */
-.orderSummary h3 {
-  color: #333; /* Darker color for title */
-  margin-bottom: 10px; /* Space below title */
-  font-size: 20px; /* Larger font for title */
-  border-bottom: 2px solid #007bff; /* Underline effect for visual separation */
+.removeButton {
+  background-color: rgba(255, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* Summary Row */
+.removeButton:hover {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+.orderSummary {
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  color: white;
+  border-bottom: 2px , rgba(0, 86, 179, 0.9) ;
+}
+
 .summaryRow {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
-  margin-top: 10px; /* Space above summary row */
-  margin-bottom: 10px; /* Space above summary row */
-  border-bottom: 2px solid #007bff; /* Underline effect for visual separation */
-  font-weight: bolder;
+  color: white;
+  font-size: 0.9rem;
 }
+
+/* Checkout Link Button */
 .alink {
-  display: inline-block; /* Ensure it's treated like a button */
-  color: #fff; /* Set text color */
-  font-weight: 500;
-  background-color: #333; /* Green background for checkout button */
-  border: none;
-  padding: 10px 15px; /* Increased padding */
+  display: block;
+  width: 90%;
   text-align: center;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
-  cursor: pointer; /* Change cursor to pointer */
-  text-decoration: none; /* Remove link underline */
-  width: auto; /* Allow natural width of the content */
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 20px;
+  margin: 0.5rem auto;  /* Center and add spacing between buttons */
+  padding: 0.75rem;
+  transition: background-color 0.3s ease;
 }
 
-
-/* Hover effect for the link */
 .alink:hover {
-  color: #fff; /* Maintain white text on hover */
-  background-color: #0056b3; /* Darker green on hover */
-  transform: scale(1.05); /* Scale up on hover */
+  background-color: rgba(247, 244, 244, 0.658);
 }
 
-/* Optional: Active state for better accessibility */
-.alink:active {
-  transform: scale(0.95); /* Slightly scale down on click */
-}
-
-/* Reset default link styles to ensure consistency */
-.alink:focus,
-.alink:visited {
-  outline: none; /* Remove outline */
-  color: inherit; /* Maintain the inherited color */
-}
-
-/* Clear Button */
+/* Clear Cart Button */
 .clearButton {
-  color: #fff;
-  cursor: pointer;
-  font-weight: 500;
-  background-color: #333; /* Red background for clear button */
-  border: none;
-  padding: 10px 15px; /* Increased padding */
+  display: block;
+  width: 90%;
   text-align: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0.5rem auto;  /* Center and add spacing between buttons */
+  cursor: pointer;
+  border: 1px solid var(--primary-border-color);
+  background-color: rgba(255, 0, 0, 0.7);
+  color: white;
+  transition: all 0.3s ease;
 }
 
-/* Hover effect for Clear button */
 .clearButton:hover {
-  background-color: #0056b3;/* Darker red on hover */
-  transform: scale(1.05); /* Scale up on hover */
+  background-color: rgba(255, 0, 0, 0.9);
+}
+
+/* Scrollbar Styling for Dropdown */
+.cartItems::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cartItems::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cartItems::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.cartItems::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .cartDropdown {
+    width: 95%;
+    right: 2.5%;
+  }
 }

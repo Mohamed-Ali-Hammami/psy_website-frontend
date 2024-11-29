@@ -58,31 +58,31 @@
     margin-left: 5px;
     position: relative; /* Ensures proper positioning of cart icon and item count */
 }
-
 /* Cart Icon */
 .cartIcon {
     cursor: pointer;
     position: relative; /* To position the cart item count in the top-right corner */
-}
-
-/* Cart Icon Image */
-.cartIcon img {
+  }
+  
+  /* Cart Icon Image */
+  .cartIcon img {
     width: auto;
     height: 23px;
-}
-
-/* Cart Dropdown */
+  }
+  
+/* Cart.module.css */
 .cartDropdown {
-    display: none;
     position: absolute;
-    top: 50px; /* Adjust this if needed to align it with the icon */
-    width: 300px;
-    background-color: rgba(255, 255, 255, 0.801); /* Light background for better visibility */
-    color: #333; /* Dark text color for readability */
-    border-radius: 6px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    max-height: 500px;
+    background-color: rgba(46, 46, 46, 0.884); /* Transparent blue */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     z-index: 100;
-    padding: 10px; /* Increased padding for better spacing */
+    right: 10px;
+    top: 55px;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
   }
 /* Show Cart when it's open */
 .cartOpen {

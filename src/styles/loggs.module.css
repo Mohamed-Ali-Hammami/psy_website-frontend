@@ -36,7 +36,7 @@
     position: absolute;
     top: 100%; 
     left: 0;
-    background-color: #474747c7; /* Adjusted for a modern look */
+    background-color: #474747c7; /* Modern look */
     color: white;
     padding: 5px 10px;
     border-radius: 6px;
@@ -46,6 +46,91 @@
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show dropdown menu when the parent is hovered or active */
+.parent:hover .dropdown-menu,
+.parent:focus-within .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Adjust dropdown menu for phone view */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: absolute; /* Make it flow with the content */
+        width: 100%; /* Full width on mobile */
+        transform: none; /* No transform for static positioning */
+        opacity: 1; /* Ensure it's fully visible */
+        display: block; /* Ensure it remains visible */
+        box-shadow: none; /* Remove box shadow for simplicity */
+        padding: 10px 15px; /* Adjust padding for touch targets */
+    }
+
+    /* Adjust menu items for better readability */
+    .dropdown-menu a {
+        display: block; /* Stack menu items vertically */
+        padding: 10px;
+        text-align: center; /* Center-align text for better readability */
+        color: white; /* Ensure contrast */
+        text-decoration: none; /* Remove underline */
+        font-size: 1rem; /* Adjust font size for readability */
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #616161; /* Highlight on hover */
+    }
+        
+    /* Login Button */
+    .dropdownItemLogin {
+        color: #fff;
+        font-weight: 500;
+        background-color: #333;
+        border: none;
+        padding: 8px 12px;
+        text-align: center;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+    }
+
+    .dropdownItemLogin:hover {
+        background-color: #0056b3; /* Darker blue for hover */
+    }
+
+    /* Register Button */
+    .dropdownItemRegister {
+        color: #fff;
+        font-weight: 500;
+        background-color: #333;
+        border: none;
+        padding: 8px 12px;
+        text-align: center;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+    }
+
+    .dropdownItemRegister:hover {
+        background-color: #0056b3; /* Darker green for hover */
+    }
+
+    /* Logout Button */
+    .dropdownItemLogout {
+        color: #fff;
+        font-weight: 500;
+        background-color: #333;
+        border: none;
+        padding: 8px 12px;
+        text-align: center;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+    }
+
+    .dropdownItemLogout:hover {
+        background-color: #0056b3; /* Darker red for hover */
+    }
 }
 
 /* Active dropdown (show on toggle) */

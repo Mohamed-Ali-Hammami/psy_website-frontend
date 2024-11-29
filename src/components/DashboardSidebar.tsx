@@ -11,15 +11,16 @@ import Cart from "./Cart";
 import ContactUsForm from "./ContactUsForm";
 
 const DashboardSidebar: React.FC = () => {
-  const { cartItems,emptyCart } = useCart();
-  
+  const { cartItems, emptyCart } = useCart();
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [cartOpen, setCartOpen] = useState(false);
   const [contactFormOpen, setContactFormOpen] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const cartRef = useRef<HTMLDivElement>(null);
-  const [isCartHovered, setIsCartHovered] = useState(false);
+  const [isButtonHovered, setIsButtonHovered] = useState(false);
 
+  // Toggle cart visibility, with emptying logic if cart is empty
   const toggleCart = () => {
     setCartOpen((prev) => {
       const nextState = !prev;
@@ -30,11 +31,17 @@ const DashboardSidebar: React.FC = () => {
     });
   };
 
-  const handleCartMouseEnter = () => setIsCartHovered(true);
-  const handleCartMouseLeave = () => setIsCartHovered(false);
+  // Handle mouse enter/leave for cart hover effect
+  const handleCartMouseEnter = () => setIsButtonHovered(true);
+  const handleCartMouseLeave = () => setIsButtonHovered(false);
+
+  // Toggle sidebar visibility
   const toggleSidebar = () => setIsOpen((prev) => !prev);
+
+  // Toggle contact form visibility
   const toggleContactForm = () => setContactFormOpen((prev) => !prev);
 
+  // Handle outside click to close sidebar or cart
   const handleClickOutside = (event: MouseEvent) => {
     if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
       setIsOpen(false);
@@ -55,21 +62,37 @@ const DashboardSidebar: React.FC = () => {
 
   return (
     <>
+      {/* Sidebar toggle button */}
       <button
         onClick={toggleSidebar}
         className={styles.toggleButton}
         aria-label={isOpen ? "Hide menu" : "Show menu"}
+        onMouseEnter={handleCartMouseEnter}
+        onMouseLeave={handleCartMouseLeave}
       >
         <TfiAlignJustify size={24} />
+        {/* Always show on mobile */}
+        <span className={`${styles.cartItemCount} ${styles.alwaysVisible}`}>
+          {cartItems.length || "0"}
+        </span>
+        {/* Show only on hover on larger screens */}
+        {isButtonHovered && (
+          <span className={styles.cartItemCount}>
+            {cartItems.length || "0"}
+          </span>
+        )}
       </button>
 
+      {/* Sidebar content */}
       {isOpen && (
         <>
+          {/* Overlay to close sidebar */}
           <div
             className={styles.sidebarOverlay}
             onClick={() => setIsOpen(false)}
           />
 
+          {/* Sidebar */}
           <div ref={sidebarRef} className={styles.sidebarOpen}>
             <nav className={styles.menu}>
               <div className={styles.userAvatarContainer}>
@@ -89,6 +112,7 @@ const DashboardSidebar: React.FC = () => {
                 About Us
               </Link>
 
+              {/* Cart icon with item count */}
               <div className={styles.cartIconContainer} ref={cartRef}>
                 <div className={styles.menuItem}>
                   <div
@@ -104,13 +128,12 @@ const DashboardSidebar: React.FC = () => {
                       height={32}
                     />
                     <span> Cart</span>
-                    {isCartHovered && (
-                      <span className={styles.cartItemCount}>
-                        {cartItems.length || "0"}
-                      </span>
-                    )}
+                    <span className={styles.cartItemCount}>
+                      {cartItems.length || "0"}
+                    </span>
                   </div>
                 </div>
+                {/* Cart dropdown content */}
                 {cartOpen && cartItems.length > 0 && (
                   <div
                     ref={cartRef}
@@ -123,6 +146,7 @@ const DashboardSidebar: React.FC = () => {
                 )}
               </div>
 
+              {/* Contact Us button */}
               <div className={styles.contactUsContainer}>
                 <button
                   onClick={toggleContactForm}
@@ -142,6 +166,7 @@ const DashboardSidebar: React.FC = () => {
         </>
       )}
 
+      {/* Contact Us form modal */}
       {contactFormOpen && (
         <div
           className={styles.modalOverlay}

@@ -130,8 +130,29 @@
 }
 
 /* Responsive Design */
+/* Responsive Design */
 @media (max-width: 768px) {
   .product-card {
-    max-width: 100%; /* Full width on smaller screens */
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center content inside */
+    justify-content: space-between; /* Create balance between sections */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+    border-radius: 12px; /* Softer, modern corners */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow for a premium look */
+    overflow: hidden; /* Ensure child elements don’t overflow */
+    width: 100%; /* Slight padding from screen edges */
+    max-width: 400px; /* Limit maximum size */
+    border: 1px solid rgba(0, 0, 0, 0.08); /* Subtle border */
+    margin: 10px auto; /* Center card and add vertical spacing */
+    padding: 15px; /* Padding for internal spacing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add interactive effects */
   }
+
+
+  .product-card p {
+    font-size: 0.8rem; /* Adjust paragraph size */
+  }
+
 }

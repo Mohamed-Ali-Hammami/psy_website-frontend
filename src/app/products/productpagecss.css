@@ -45,7 +45,7 @@
   margin: 0 auto;
   padding: 2rem;
   background: #2c2c2cd0;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #000000;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
@@ -83,7 +83,6 @@
   outline: none;
 }
 
-/* Responsive design adjustments */
 @media (max-width: 768px) {
   .heading {
     font-size: 2.5rem;
@@ -99,14 +98,19 @@
   }
 
   .productList {
-    padding: 1rem;
+    width: 100%;
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align the product cards */
   }
 
   .productCard {
-    width: 100%;
-    padding: 15px;
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: 400px; /* Optional: Set a maximum width */
+    margin: 10px 0; /* Add some vertical spacing between cards */
   }
 }
+
 
 /* Additional hover effects for the sort options */
 .sortOptions select:hover {
