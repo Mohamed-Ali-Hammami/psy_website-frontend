@@ -126,7 +126,7 @@ const SignUpForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     const customStyles: StylesConfig<CountryOption, boolean, GroupBase<CountryOption>> = {
         control: (base, state) => ({
             ...base,
-            backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backgroundColor: 'rgba(109, 109, 109, 0.603)',
             margin: '10px 0',
             borderColor: state.isFocused ? '#424' : '#ccc',
             borderRadius: '20px',
@@ -137,7 +137,7 @@ const SignUpForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         }),
         placeholder: (base) => ({
             ...base,
-            color: 'rgba(0, 0, 0, 0.438)',
+            color: 'rgba(255, 255, 255, 0.438)',
         }),
         option: (base, state) => ({
             ...base,
@@ -344,13 +344,14 @@ const SignUpForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                     onChange={(phone) => setFormData((prev) => ({ ...prev, phone_number: phone }))}
                     placeholder="Phone Number"
                     inputStyle={{
-                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                        backgroundColor: 'rgba(109, 109, 109, 0.603)',
                         borderColor: errors.phoneValid ? '#424' : 'red', // Red border for invalid input
                         borderRadius: '20px',
                         width: '100%',
+                        color:'white'
                     }}
                     buttonStyle={{
-                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                        backgroundColor: 'rgba(109, 109, 109, 0.603)',
                         borderColor: '#424',
                         borderRadius: '20px 20px',
                         padding:'10px'
