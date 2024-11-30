@@ -61,7 +61,7 @@ body::before {
 }
 .hero-content p {
   font-size: 1.2rem; /* Maintain readability */
-  color: #3a3a3a; /* Subtle text color for paragraph */
+  color: #ada7a7; /* Subtle text color for paragraph */
   line-height: 1.5; /* Improved line height for clarity */
   padding: 0 1rem; /* Padding for text */
   font-weight: bolder;
