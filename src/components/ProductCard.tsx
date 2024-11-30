@@ -85,7 +85,6 @@ export default function ProductCard({ product, addToCart, isPurchased }: Product
       <div className={styles['product-info']}>
         <div className={styles['product-text']}>
           <h1>{product.name}</h1>
-          <p>{product.description}</p>
         </div>
 
         {/* Conditionally render buttons, price, and download section */}

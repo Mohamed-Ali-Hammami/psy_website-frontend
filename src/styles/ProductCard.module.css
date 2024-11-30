@@ -142,7 +142,6 @@
     border-radius: 12px; /* Softer, modern corners */
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow for a premium look */
     overflow: hidden; /* Ensure child elements don’t overflow */
-    width: 100%; /* Slight padding from screen edges */
     max-width: 400px; /* Limit maximum size */
     border: 1px solid rgba(0, 0, 0, 0.08); /* Subtle border */
     margin: 10px auto; /* Center card and add vertical spacing */
@@ -152,7 +151,7 @@
 
 
   .product-card p {
-    font-size: 0.8rem; /* Adjust paragraph size */
+    font-size: 1.4rem; /* Adjust paragraph size */
   }
 
 }
