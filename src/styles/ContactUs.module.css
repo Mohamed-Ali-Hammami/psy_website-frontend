@@ -1,15 +1,16 @@
 /* src/app/styles/ContactUs.module.css */
 
 .wrapper {
-    background-color: #5e6770;
-    border-radius: 5px;
+    background-color: rgba(61, 61, 61, 0.986);
+    border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px #0057b371;
+    border: 2px solid #0056b3;
     max-width: 600px;
     margin: 0 auto;
     position: relative;
     font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
-    color: #333;
+
 }
 
 .closeButton {
@@ -25,15 +26,16 @@
 }
 
 .closeButton:hover {
-    color: #4a90e2;
+    color: #0056b3;
 }
 
 .customh1 {
     font-size: 26px;
     font-weight: 600;
-    color: #222;
+    color: #ffffff;
     text-align: center;
     margin-bottom: 20px;
+    border-bottom: 2px #0056b3;
 }
 
 .formInput input,
@@ -41,7 +43,7 @@
     width: 100%;
     padding: 12px 15px;
     font-size: 16px;
-    border-radius: 3px;
+    border-radius: 20px;
     border: 1px solid #ddd;
     margin-bottom: 15px;
     outline: none;
@@ -50,7 +52,8 @@
 
 .formInput input:focus,
 .formInput textarea:focus {
-    border-color: #4a90e2;
+    border: 1px solid;
+    border-color: #0056b3;
 }
 
 .errorInput {
@@ -71,15 +74,15 @@
     font-size: 16px;
     font-weight: 600;
     color: #fff;
-    background-color: #414850;
+    background-color: #888;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .submitButton:hover {
-    background-color: #2d649b;
+    background-color: #0056b3;
 }
 
 .statusMessage {

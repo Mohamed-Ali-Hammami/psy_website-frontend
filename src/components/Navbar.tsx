@@ -27,6 +27,10 @@ export default function Navbar() {
     });
   };
 
+  // Close cart
+  const closeCart = () => {
+    setCartOpen(false);
+  };
 
   const toggleContactForm = () => setContactFormOpen(!contactFormOpen);
 
@@ -129,7 +133,7 @@ export default function Navbar() {
                       cartOpen ? styles.cartOpen : ""
                     }`}
                   >
-                    <Cart />
+                    <Cart closeCart={closeCart} />
                   </div>
                 )}
               </div>

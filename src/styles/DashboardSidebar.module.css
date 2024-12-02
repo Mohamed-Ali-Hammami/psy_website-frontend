@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.63);
   z-index: 999;
 }
 
@@ -138,16 +138,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
-  background-color: rgba(46, 46, 46, 0.884);
+  background-color: rgba(61, 61, 61, 0.986); /* Transparent blue */
   color: #333;
-  border-radius: 20px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px #0057b371;
   z-index: 1000;
-  padding: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border: 2px solid #0056b3;
 }
-  
-
 .cartOpen {
   display: block;
 }

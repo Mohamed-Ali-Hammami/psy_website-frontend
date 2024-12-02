@@ -30,7 +30,10 @@ const DashboardSidebar: React.FC = () => {
       return nextState;
     });
   };
-
+    // Close cart
+  const closeCart = () => {
+      setCartOpen(false);
+    };
   // Handle mouse enter/leave for cart hover effect
   const handleCartMouseEnter = () => setIsButtonHovered(true);
   const handleCartMouseLeave = () => setIsButtonHovered(false);
@@ -141,7 +144,7 @@ const DashboardSidebar: React.FC = () => {
                       cartOpen ? styles.cartOpen : ""
                     }`}
                   >
-                    <Cart />
+                    <Cart closeCart={closeCart} />
                   </div>
                 )}
               </div>

@@ -1,7 +1,6 @@
 .wrapper {
     position: relative; /* Ensure the wrapper has relative positioning */
     width: 90%; /* Adjust width to a percentage of the container */
-    border: 1px solid black;
     max-width: 800px; /* Max width for larger screens */
     max-height: 90vh; /* Limit the height to 90% of the viewport */
     overflow-y: auto;
@@ -9,7 +8,8 @@
     padding: 40px; /* Internal padding */
     background-color: rgba(34, 34, 34, 0.966);
     border-radius: 20px; /* Rounded corners */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.75); /* Shadow for depth */
+    box-shadow: 0 6px 12px #0057b371;
+    border: 2px solid #0056b3;
     z-index: 1;
 }
 
@@ -313,18 +313,17 @@
 }
 
 .error {
+    position: relative; /* Same positioning as inputs */
     color: #d9534f; /* Bootstrap danger red */
-    font-size: 0.875rem; /* Slightly smaller than the default text */
-    text-align: left; /* Aligns error messages with the input fields */
-    background-color: rgba(223, 223, 223, 0.9); /* Slightly transparent background for better visibility */
-    padding: 5px; /* Increased padding for better readability */
-    border: 1px solid #d9534f; /* Border matching the text color for emphasis */
-    border-radius: 4px; /* Rounded corners */
-    font-weight: 500; /* Slightly bolder text for better visibility */
-    transition: opacity 0.3s ease; /* Smooth transition for fade effects */
-    margin: 10px 0; /* Vertical margin for spacing */
-    min-height: 20px; /* Reserve space for error messages */
+    font-size: 0.875rem; /* Match input font size for consistency */
+    background-color: transparent; /* No background */
+    margin-top: 10px; /* Slightly closer to the input */
+    margin-bottom: 15px; /* Align with input spacing */
+    display: block; /* Ensure it occupies its own line */
+    text-align: left; /* Align with input text */
 }
+
+
 
 
 /* Animated Error Message (optional, add subtle fade-in effect) */

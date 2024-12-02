@@ -32,7 +32,7 @@
 
 .cartItem:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.02);
+  border-radius: 8px;
 }
 
 .productImage {
@@ -56,9 +56,9 @@
 }
 
 .price {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .productActions {
@@ -70,9 +70,9 @@
   background-color: rgba(255, 0, 0, 0.6);
   color: white;
   border: none;
-  padding: 0.25rem 0.5rem;
+  padding: 0.35rem 0.8rem;
   border-radius: 15px;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -93,6 +93,9 @@
   justify-content: space-between;
   color: white;
   font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  border-bottom: 2px solid #0056b3;
 }
 
 /* Checkout Link Button */

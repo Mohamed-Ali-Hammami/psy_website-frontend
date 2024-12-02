@@ -1,10 +1,12 @@
-"use client";
-
 import React, { useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Cart.module.css';
 import { useCart } from '../app/context/CartContext';
+
+interface CartProps {
+  closeCart: () => void;
+}
 
 // Separate component for cart item
 const CartItem: React.FC<{
@@ -47,7 +49,8 @@ const CartSummary: React.FC<{
   total: number;
   cartData: string;
   onClearCart: () => void;
-}> = ({ total, cartData, onClearCart }) => (
+  closeCart: () => void;
+}> = ({ total, cartData, onClearCart, closeCart }) => (
   <div className={styles.orderSummary}>
     <h3>Order Summary</h3>
     <div className={styles.summaryRow}>
@@ -57,6 +60,7 @@ const CartSummary: React.FC<{
     <Link 
       href={`/checkout?cart=${cartData}`}
       className={styles.alink}
+      onClick={closeCart} // Close cart on checkout click
     >
       Proceed to Checkout
     </Link>
@@ -70,7 +74,7 @@ const CartSummary: React.FC<{
 );
 
 // Main Cart Component
-const Cart: React.FC = () => {
+const Cart: React.FC<CartProps> = ({ closeCart }) => {
   const { cartItems, removeFromCart, clearCart } = useCart();
 
   // Memoized calculations to prevent unnecessary re-renders
@@ -83,18 +87,6 @@ const Cart: React.FC = () => {
     encodeURIComponent(JSON.stringify(cartItems)),
     [cartItems]
   );
-
-  // Empty cart state
-  if (cartItems.length === 0) {
-    return (
-      <div className={styles.emptyCart}>
-        <p>Your cart is empty</p>
-        <Link href="/products" className={styles.continueShopping}>
-          Continue Shopping
-        </Link>
-      </div>
-    );
-  }
 
   return (
     <div className={styles.cartContainer}>
@@ -112,6 +104,7 @@ const Cart: React.FC = () => {
           total={totalPrice}
           cartData={encodedCartData}
           onClearCart={clearCart}
+          closeCart={closeCart} // Pass the closeCart function to CartSummary
         />
       </div>
     </div>
