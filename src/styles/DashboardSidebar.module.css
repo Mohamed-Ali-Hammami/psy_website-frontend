@@ -142,9 +142,10 @@
   color: #333;
   border-radius: 12px;
   box-shadow: 0 6px 12px #0057b371;
+  border: 2px solid #0056b3;
   z-index: 1000;
   padding: 15px;
-  border: 2px solid #0056b3;
+
 }
 .cartOpen {
   display: block;
